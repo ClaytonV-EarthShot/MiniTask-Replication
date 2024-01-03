@@ -19,9 +19,8 @@ code {
   display: inline-block;
   background-color: black;
   color: #dedede;
-  font-size: 0.55em;
+  font-size: 0.45em;
   padding: 1.2em;
-  align-content: left;
   border-radius: 1em;
 }
 
@@ -70,4 +69,24 @@ code {
 
 .boBubbles:nth-of-type(3) {
   width:20%
+}
+
+/* Buckets Component */
+
+.bucketWrapper {
+  display: inline-block;
+  color: #dedede;
+  font-size: 0.3em;
+  padding: 0.8em;
+  border-radius: 1em;
+}
+
+.bucketWrapper > p {
+  margin: 0;
+}
+
+.bucketWrapper > h3 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
 }
