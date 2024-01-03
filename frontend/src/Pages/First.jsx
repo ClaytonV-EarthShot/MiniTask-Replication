@@ -1,11 +1,9 @@
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import BadOutcome from './Components/BadOutcome';
-import Buckets from './Components/Buckets';
-import First from './Pages/First';
-import Second from './Pages/Second';
+import BadOutcome from "../Components/BadOutcome"
+import Buckets from "../Components/Buckets"
 
-// bucketList Object created to repliate API data
+export default function First() {
+
+  // bucketList Object created to repliate API data
 const bucketList = {
   bucketOne: {
     title: '🌳Bucket #1',
@@ -51,18 +49,18 @@ const bucketList = {
   }
 }
 
-function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<First />}/>
-          <Route path='/first' element={<First />}/>
-          <Route path='/second' element={<Second />}/>
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    <>
+      <div style={{height: '100vh'}}>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <BadOutcome></BadOutcome>
+        </div>
+        <div style={{display: 'flex', width: '100%', position: 'absolute', bottom: '0', justifyContent: 'space-evenly'}}>
+          {Object.values(bucketList).map((value) => {
+            return <Buckets bucketItem={value}/>;
+          })}
+        </div>
+      </div>
+    </>
+  )
 }
-
-export default App;
