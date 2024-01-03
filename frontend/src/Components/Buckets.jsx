@@ -9,9 +9,9 @@ export default function Buckets({bucketItem}) {
         <p className='boWrapperBolded'>{bucketItem.boldedFact}</p>
         <p>Globally, 1 in 3 &#8800; safe drinking water, mostly &#8800; LDC's.</p>
         <div className='boBubblesWrapper'>
-          <div className="boBubbles"><p>HIGH...</p></div>
-          <div className="boBubbles"><p>HIGH...</p></div>
-          <div className="boBubbles"><p>HIGH...</p></div>
+          <div className="boBubbles"><p style={{backgroundColor: '#3e7d4f'}}>HIGH...</p></div>
+          <div className="boBubbles"><p style={{backgroundColor: '#3e7d4f'}}>HIGH...</p></div>
+          <div className="boBubbles"><p style={{backgroundColor: '#3e7d4f'}}>HIGH...</p></div>
         </div>
       </div>
     </>

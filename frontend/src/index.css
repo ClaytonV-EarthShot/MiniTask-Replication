@@ -56,7 +56,6 @@ code {
 .boBubbles > p {
   border-radius: 0.8em;
   padding: 0.1em 0.5em;
-  background-color: #3e7d4f;
 }
 
 .boBubbles:nth-of-type(1) {
@@ -74,7 +73,6 @@ code {
 /* Buckets Component */
 
 .bucketWrapper {
-  display: inline-block;
   color: #dedede;
   font-size: 0.3em;
   padding: 0.8em;
@@ -89,4 +87,26 @@ code {
   font-size: 1em;
   font-weight: normal;
   margin: 0;
+}
+
+/* Map Component */
+
+.mapContainer {
+  width: 11.95em;
+  height: 3.26em;
+  background-color: #49a0f8;
+  border-radius: 1em;
+  color: #fefefe;
+}
+
+/* Buckets Two Component */
+
+.greybox {
+  background-color: #27272a;
+  border-radius: 1em;
+}
+
+.greybox > p {
+  padding: 0.7em;
+  font-size: 3em;
 }

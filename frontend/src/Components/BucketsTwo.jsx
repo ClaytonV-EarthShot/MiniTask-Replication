@@ -1,0 +1,34 @@
+export default function BucketsTwo({bucketItem}) {
+
+  let backgroundColor = bucketItem.backgroundColor;
+  
+  return (
+    <>
+      <div className='bucketWrapper' style={{backgroundColor: backgroundColor, padding: '2em'}}>
+        <h3 style={{fontSize: '2em', marginBottom: '0.4em'}}>{bucketItem.title}</h3>
+        <p className='boWrapperBolded' style={{fontSize: '3em'}}>{bucketItem.boldedFact}</p>
+        <p style={{fontSize: '2em'}}>{bucketItem.subtext}</p>
+        <div className='greybox'>
+          <p>problem profile.</p>
+        </div>
+        <div className='boBubblesWrapper'>
+          <div className="boBubbles" style={{width: '17.95em'}}>
+            <p style={{backgroundColor: bucketItem.bubbleColorOne, padding: '0.3em', fontSize: '1.7em'}}>
+              {bucketItem.bubbleFactOne}
+            </p>
+          </div>
+          <div className="boBubbles" style={{width: '17.95em'}}>
+            <p style={{backgroundColor: bucketItem.bubbleColorTwo, padding: '0.3em', fontSize: '1.7em'}}>
+              {bucketItem.bubbleFactTwo}
+            </p>
+          </div>
+          <div className="boBubbles" style={{width: '17.95em'}}>
+            <p style={{backgroundColor: bucketItem.bubbleColorThree, padding: '0.3em', fontSize: '1.7em'}}>
+              {bucketItem.bubbleFactThree}
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
