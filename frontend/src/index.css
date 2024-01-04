@@ -14,10 +14,23 @@ code {
 }
 
 /* First Page Styling */
-.firstPageWrapper {
+.firstPageContainer {
   background-image: url('./Images/firstPageBG.jpg');
   background-size: cover;
   height: 100vh;
+}
+
+.firstPageBOContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.firstPageBucketsContainer {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  justify-content: space-evenly;
 }
 
 

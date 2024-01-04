@@ -9,53 +9,53 @@ const bucketList = {
     title: '🌳Bucket #1',
     boldedFact: '30% = food & ag.',
     bubbleFact: '{xxx}...',
-    backgroundColor: 'red'
+    backgroundColor: '#b3a044'
   },
   bucketTwo: {
     title: '🌳Bucket #2',
     boldedFact: '10% = healthcare.',
     bubbleFact: '{xxx}...',
-    backgroundColor: 'green'
+    backgroundColor: '#d04b44'
   },
   bucketThree: {
     title: '🌳Bucket #3',
     boldedFact: '25% = water.',
     bubbleFact: '{xxx}...',
-    backgroundColor: 'orange'
+    backgroundColor: '#49a0f8'
   },
   bucketFour: {
     title: '🌳Bucket #4',
     boldedFact: '25%= energy.',
     bubbleFact: '{xxx}...',
-    backgroundColor: 'purple'
+    backgroundColor: '#2c2708'
   },
   bucketFive: {
     title: '🌳Bucket #5',
     boldedFact: '3% = housing.',
     bubbleFact: '{xxx}...',
-    backgroundColor: 'pink'
+    backgroundColor: '#f19e38'
   },
   bucketSix: {
     title: '🌳Bucket #6',
     boldedFact: '5% = environment.',
     bubbleFact: '{xxx}...',
-    backgroundColor: 'yellow'
+    backgroundColor: '#4ea938'
   },
   bucketSeven: {
     title: '🌳Bucket #7',
     boldedFact: '2% = economic.',
     bubbleFact: '{xxx}...',
-    backgroundColor: 'blue'
+    backgroundColor: '#7515f4'
   }
 }
 
   return (
     <>
-      <div className='firstPageWrapper'>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+      <div className='firstPageContainer'>
+        <div className='firstPageBOContainer'>
           <BadOutcome></BadOutcome>
         </div>
-        <div style={{display: 'flex', width: '100%', position: 'absolute', bottom: '0', justifyContent: 'space-evenly'}}>
+        <div className='firstPageBucketsContainer'>
           {Object.values(bucketList).map((value) => {
             return <Buckets bucketItem={value}/>;
           })}
