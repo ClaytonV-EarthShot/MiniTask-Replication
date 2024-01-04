@@ -52,7 +52,7 @@ const bucketList = {
   return (
     <>
       <div className='firstPageContainer'>
-        <div className='firstPageBOContainer'>
+        <div className='bOContainer'>
           <BadOutcome></BadOutcome>
         </div>
         <div className='firstPageBucketsContainer'>

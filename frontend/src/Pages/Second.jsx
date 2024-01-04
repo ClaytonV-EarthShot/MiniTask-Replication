@@ -45,13 +45,13 @@ export default function Second() {
   return (
     <>
       <div className='secondPageWrapper'>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div className='bOContainer'>
           <BadOutcomeTwo></BadOutcomeTwo>
         </div>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div className='bOContainer'>
           <Map></Map>
         </div>
-        <div style={{display: 'flex', width: '100%', justifyContent: 'space-evenly'}}>
+        <div className='secondPageBucketsContainer'>
           {Object.values(bucketList).map((value) => {
             return <BucketsTwo bucketItem={value}/>;
           })}

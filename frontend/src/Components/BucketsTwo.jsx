@@ -13,17 +13,17 @@ export default function BucketsTwo({bucketItem}) {
         </div>
         <div className='boBubblesWrapper'>
           <div className="boBubbles" style={{width: '17.95em'}}>
-            <p style={{backgroundColor: bucketItem.bubbleColorOne, padding: '0.3em', fontSize: '1.7em'}}>
+            <p className='bOTBubbleText' style={{backgroundColor: bucketItem.bubbleColorOne}}>
               {bucketItem.bubbleFactOne}
             </p>
           </div>
           <div className="boBubbles" style={{width: '17.95em'}}>
-            <p style={{backgroundColor: bucketItem.bubbleColorTwo, padding: '0.3em', fontSize: '1.7em'}}>
+          <p className='bOTBubbleText' style={{backgroundColor: bucketItem.bubbleColorTwo}}>
               {bucketItem.bubbleFactTwo}
             </p>
           </div>
           <div className="boBubbles" style={{width: '17.95em'}}>
-            <p style={{backgroundColor: bucketItem.bubbleColorThree, padding: '0.3em', fontSize: '1.7em'}}>
+          <p className='bOTBubbleText' style={{backgroundColor: bucketItem.bubbleColorThree}}>
               {bucketItem.bubbleFactThree}
             </p>
           </div>
