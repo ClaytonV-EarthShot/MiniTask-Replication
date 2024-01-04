@@ -51,7 +51,7 @@ const bucketList = {
 
   return (
     <>
-      <div style={{height: '100vh'}}>
+      <div className='firstPageWrapper'>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <BadOutcome></BadOutcome>
         </div>

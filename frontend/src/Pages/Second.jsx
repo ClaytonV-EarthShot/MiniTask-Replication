@@ -44,7 +44,7 @@ const bucketList = {
 export default function Second() {
   return (
     <>
-      <div style={{height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+      <div className='secondPageWrapper'>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <BadOutcomeTwo></BadOutcomeTwo>
         </div>

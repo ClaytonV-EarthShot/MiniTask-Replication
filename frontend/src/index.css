@@ -13,6 +13,14 @@ code {
     monospace;
 }
 
+/* First Page Styling */
+.firstPageWrapper {
+  background-image: url('./Images/firstPageBG.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+
 /* Bad Outcome Component */
 
 .boWrapper {
@@ -89,14 +97,29 @@ code {
   margin: 0;
 }
 
+/* Second Page Styling */
+.secondPageWrapper {
+  background-image: url('./Images/secondPageBG.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Map Component */
 
 .mapContainer {
-  width: 11.95em;
+  background-image: url('./Images/world.jpg');
+  background-size: cover;
+  width: 10.95em;
   height: 3.26em;
-  background-color: #49a0f8;
   border-radius: 1em;
   color: #fefefe;
+}
+
+.mapContainer {
+  padding: 0 0.4em
 }
 
 /* Buckets Two Component */
