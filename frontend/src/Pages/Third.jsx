@@ -5,10 +5,13 @@ export default function Third() {
   return (
     <>
       <div className='thirdPageContainer'>
-        <InfoBox bgName='edmonton.jpg'/>
-        <InfoBox />
-        <InfoBox />
-        <InfoBox />
+        <div className='infoBoxWrapper'>
+          <InfoBox bgName='edmonton.jpg'/>
+          {/* <InfoBox />
+          <InfoBox />
+          <InfoBox />
+          <InfoBox /> */}
+        </div>
       </div>
     </>
   )
