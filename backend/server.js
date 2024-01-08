@@ -1,6 +1,7 @@
 require('dotenv'). config();
 
 const express = require('express');
+const mongoose = require('mongoose');
 
 // express
 const app = express()
@@ -16,7 +17,15 @@ app.get('/', (req, res) => {
   res.json({mssg: 'Successfully reached the front page front end'});
 })
 
-// listener
-app.listen(process.env.PORT, () => {
-  console.log('Successful listening on port', process.env.PORT);
-})
+// connect to db
+mongoose.connect(process.env.MONGODB)
+  .then(() => {
+    // listener
+    app.listen(process.env.PORT, () => {
+      console.log('Successful connection to DB & listening on port', process.env.PORT);
+    })
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+
