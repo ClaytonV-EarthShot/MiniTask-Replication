@@ -1,21 +1,22 @@
 require('dotenv'). config();
 
 const express = require('express');
+const cityRoutes = require('./routes/cities');
 const mongoose = require('mongoose');
 
 // express
 const app = express()
 
-// Log requests
+// middleware
+app.use(express.json());
+
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 })
 
 // route handler
-app.get('/', (req, res) => {
-  res.json({mssg: 'Successfully reached the front page front end'});
-})
+app.use('/api/cities', cityRoutes);
 
 // connect to db
 mongoose.connect(process.env.MONGODB)
