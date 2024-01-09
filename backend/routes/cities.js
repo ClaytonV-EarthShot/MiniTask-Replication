@@ -2,7 +2,9 @@ const express = require('express');
 const {
   createCity,
   getCities,
-  getCity
+  getCity,
+  deleteCity,
+  updateCity
 } = require('../controllers/cityController')
 
 const router = express.Router();
@@ -14,6 +16,12 @@ router.get('/', getCities);
 router.get('/:id', getCity);
 
 // POST a new city
-router.post('/', createCity)
+router.post('/', createCity);
+
+// DELETE a city
+router.delete('/:id', deleteCity);
+
+// UPDATE a city
+router.patch('/:id', updateCity);
 
 module.exports = router;

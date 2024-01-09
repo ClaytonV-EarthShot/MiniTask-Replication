@@ -38,11 +38,45 @@ const createCity = async (req, res) => {
 }
 
 // delete a city
+const deleteCity = async (req, res) => {
+  const { id } = req.params;
+
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'City does not exist'});
+  }
+
+  const city = await City.findOneAndDelete({_id: id});
+
+  if (!city) {
+    return res.status(400).json({error: 'City does not exist'});
+  }
+
+  res.status(200).json(city);
+}
 
 // update a city
+const updateCity = async (req, res) => {
+  const { id } = req.params;
+
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'City does not exist'});
+  }
+
+  const city = await City.findOneAndUpdate({_id: id}, {
+    ...req.body
+  });
+
+  if (!city) {
+    return res.status(400).json({error: 'City does not exist'});
+  };
+
+  res.status(200).json;
+}
 
 module.exports = {
   createCity,
   getCities,
-  getCity
+  getCity,
+  deleteCity,
+  updateCity
 }
