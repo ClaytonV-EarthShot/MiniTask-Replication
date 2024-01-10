@@ -1,4 +1,4 @@
-export default function InfoBox({cityName, bgImage, cityPopulation, citySize}) {
+export default function InfoBox({cityName, bgImage, cityPopulation, citySize, cityNumber}) {
   
   const imageName = `url('${bgImage}')`
   const population = cityPopulation.toLocaleString('en', {useGrouping: true});
@@ -10,7 +10,7 @@ export default function InfoBox({cityName, bgImage, cityPopulation, citySize}) {
             `radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.4) 100%), 
             ${imageName}`,
         }}>
-          <p className='infoTopLeft'></p>
+          <p className='infoTopLeft'>#{cityNumber}</p>
           <p className='infoTopRight'></p>
           <p className='infoCityName'>{cityName}</p>
           <p className='infoBottomLeft'>{population}</p>
