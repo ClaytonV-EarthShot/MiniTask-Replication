@@ -7,7 +7,16 @@ export default function Third() {
   const [filteredCities, setFilteredCities] = useState(cities);
   const [selectedFilters, setSelectedFilters] = useState([]);
 
-  let filters = ['LargePopulation', 'SmallPopulation'];
+  let filters = [
+    {
+      name: 'Large Population',
+      tooltipText: 'A population that is higher than 1,000,000'
+    },
+    {
+      name: 'Small Population',
+      tooltipText: 'A population that is less than 1,000,000'
+    }
+  ]
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -43,10 +52,10 @@ export default function Third() {
       let i = selectedFilters.map((filterCategory) => {
         let j = null;
         switch(filterCategory) {
-          case 'LargePopulation':
+          case 'Large Population':
             j = cities.filter((city) => city.population >= 1000000)
             return j;
-          case 'SmallPopulation':
+          case 'Small Population':
             j = cities.filter((city) => city.population < 1000000)
             return j;
         }
@@ -63,10 +72,15 @@ export default function Third() {
         <div className='filterButtonContainer'>
           {filters.map((category, index) => (
             <button
-              onClick={() => handleFilterButtonClick(category)}
+              onClick={() => handleFilterButtonClick(category.name)}
+              className={`
+                filterButton 
+                ${selectedFilters?.includes(category.name) ? "active" : ""}
+              `}
               key={index}
+              data-toolTip={category.tooltipText}
             >
-              {category}
+              <p>{category.name}</p>
             </button>
           ))}
         </div>
