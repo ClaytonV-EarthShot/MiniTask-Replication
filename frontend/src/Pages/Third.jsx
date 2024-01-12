@@ -80,7 +80,7 @@ export default function Third() {
               key={index}
               data-toolTip={category.tooltipText}
             >
-              <p>{category.name}</p>
+              <p className='category'>{category.name}</p>
             </button>
           ))}
         </div>

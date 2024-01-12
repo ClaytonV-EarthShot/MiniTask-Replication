@@ -8,6 +8,18 @@ body {
   background-color: #1e1e1e;
 }
 
+body::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+body::-webkit-scrollbar-track {
+  background: #404040
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #dedede
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
