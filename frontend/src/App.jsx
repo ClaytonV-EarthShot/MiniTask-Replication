@@ -7,6 +7,7 @@ import Third from './Pages/Third';
 function App() {
   return (
     <div className="App">
+      <script src="https://kit.fontawesome.com/439df294e0.js" crossorigin="anonymous"></script>
       <BrowserRouter>
         <Routes>
           <Route index element={<First />}/>

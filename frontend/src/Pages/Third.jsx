@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import InfoBox from "../Components/InfoBox"
+import InfoBox from "../Components/InfoBox";
+import SideNav from '../Components/SideNav';
 
 export default function Third() {
   const [cities, setCities] = useState([]);
@@ -69,32 +70,39 @@ export default function Third() {
   return (
     <>
       <div className='thirdPageContainer'>
-        <div className='filterButtonContainer'>
-          {filters.map((category, index) => (
-            <button
-              onClick={() => handleFilterButtonClick(category.name)}
-              className={`
-                filterButton 
-                ${selectedFilters?.includes(category.name) ? "active" : ""}
-              `}
-              key={index}
-              data-toolTip={category.tooltipText}
-            >
-              <p className='category'>{category.name}</p>
-            </button>
-          ))}
-        </div>
-        <div className='infoBoxWrapper'>
-          {filteredCities && filteredCities.map((city, index) => (
-            <InfoBox 
-              key={city._id}
-              cityNumber={index + 1}
-              cityName={city.name}
-              bgImage={city.imageLinkName}
-              cityPopulation={city.population}
-              citySize={city.size}
-            />
-          ))}
+        <SideNav />
+
+        <div style={{display: 'flex', flexDirection: 'column', width: '93%'}}>
+          
+          <div className='filterButtonContainer'>
+            {filters.map((category, index) => (
+              <button
+                onClick={() => handleFilterButtonClick(category.name)}
+                className={`
+                  filterButton 
+                  ${selectedFilters?.includes(category.name) ? "active" : ""}
+                `}
+                key={index}
+                data-toolTip={category.tooltipText}
+              >
+                <p className='category'>{category.name}</p>
+              </button>
+            ))}
+          </div>
+
+          <div className='infoBoxWrapper'>
+            {filteredCities && filteredCities.map((city, index) => (
+              <InfoBox 
+                key={city._id}
+                cityNumber={index + 1}
+                cityName={city.name}
+                bgImage={city.imageLinkName}
+                cityPopulation={city.population}
+                citySize={city.size}
+              />
+            ))}
+          </div>    
+        
         </div>
       </div>
     </>
