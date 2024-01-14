@@ -19,20 +19,20 @@ export default function SideNav() {
         <ul>
           <li>
             <button className='logoButton'>
-            <FontAwesomeIcon icon={faUser}/>
+              <FontAwesomeIcon icon={faUser}/>
             </button>
           </li>
           <li><a href='#'>
-          <FontAwesomeIcon icon={faLink}/> 
+            <FontAwesomeIcon icon={faLink}/> 
           </a></li>
           <li><a href='#'>
-          <FontAwesomeIcon icon={faLink}/> 
+            <FontAwesomeIcon icon={faLink}/> 
           </a></li>
           <li><a href='#'>
-          <FontAwesomeIcon icon={faInfo}/>
+            <FontAwesomeIcon icon={faInfo}/>
           </a></li>
           <li><a href='#'>
-          <FontAwesomeIcon icon={faComment}/> 
+            <FontAwesomeIcon icon={faComment}/> 
           </a></li>
           <li><a href='#'>
             <FontAwesomeIcon icon={faCircleQuestion}/>
