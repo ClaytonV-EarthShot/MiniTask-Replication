@@ -14,7 +14,7 @@ export default function InfoBox({cityName, bgImage, cityPopulation, citySize, ci
           <p className='infoTopRight'></p>
           <p className='infoCityName'>{cityName}</p>
           <p className='infoBottomLeft'>{population}</p>
-          <p className='infoBottomRight'>{citySize}<sup style={{fontSize:'0.6em'}}>2</sup></p>
+          <p className='infoBottomRight'>{citySize}km<sup style={{fontSize:'0.6em'}}>2</sup></p>
       </div>
     </>
   )

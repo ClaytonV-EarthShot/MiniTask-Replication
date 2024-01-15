@@ -11,7 +11,7 @@ const citySchema = new Schema({
     type: Number,
   },
   size: {
-    type: String,
+    type: Number,
   },
   imageLinkName: {
     type: String,

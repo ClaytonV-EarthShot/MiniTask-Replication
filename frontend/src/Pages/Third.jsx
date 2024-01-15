@@ -16,6 +16,14 @@ export default function Third() {
     {
       name: 'Small Population',
       tooltipText: 'A population that is less than 1,000,000'
+    },
+    {
+      name: 'Large Area',
+      tooltipText: 'Area bigger than 600km²'
+    },
+    {
+      name: 'Small Area',
+      tooltipText: 'Area smaller than 600km²'
     }
   ]
 
@@ -44,24 +52,50 @@ export default function Third() {
 
   useEffect(() => {
     filterCities();
-    console.log('These are the current cities in the list');
-    console.dir(cities);
+    // console.log('These are the current cities in the list');
+    // console.dir(cities);
   }, [selectedFilters]);
 
   const filterCities = () => {
     if (selectedFilters.length > 0) {
-      let i = selectedFilters.map((filterCategory) => {
+      let i = cities;
+      selectedFilters.map((filterCategory) => {
         let j = null;
         switch(filterCategory) {
           case 'Large Population':
-            j = cities.filter((city) => city.population >= 1000000)
-            return j;
+            j = cities.filter((city) => city.population >= 1000000);
+            j.map((cityJ) => {
+              i = i.filter((cityI) => cityI === cityJ);
+            });
+            break;
           case 'Small Population':
-            j = cities.filter((city) => city.population < 1000000)
-            return j;
+            j = cities.filter((city) => city.population < 1000000);
+            let tempArray = [];
+            j.map((city) => {
+              let index = i.indexOf(city);
+              let splicedCity = i.splice(index);
+              tempArray.push('hello');
+              console.dir(splicedCity);
+              // tempArray.push(splicedCity);
+              // tempArray = tempArray.flat;
+            });
+            // i = tempArray;
+            break;
+          case 'Large Area':
+            j = cities.filter((city) => city.size >= 600);
+            j.map((cityJ) => {
+              i = i.filter((cityI) => cityI === cityJ);
+            });
+            break;
+          case 'Small Area':
+            j = cities.filter((city) => city.size < 600);
+            j.map((cityJ) => {
+              i = i.filter((cityI) => cityI === cityJ);
+            });
+            break;
         }
       })
-      setFilteredCities(i.flat());
+      setFilteredCities(i);
     } else {
       setFilteredCities([...cities]);
     }
