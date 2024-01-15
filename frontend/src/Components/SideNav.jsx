@@ -15,30 +15,64 @@ export default function SideNav() {
 
   return (
     <>
-      <nav className="sideNav">
-        <ul>
-          <li>
-            <button className='logoButton'>
-              <FontAwesomeIcon icon={faUser}/>
-            </button>
-          </li>
-          <li><a href='#'>
-            <FontAwesomeIcon icon={faLink}/> 
-          </a></li>
-          <li><a href='#'>
-            <FontAwesomeIcon icon={faLink}/> 
-          </a></li>
-          <li><a href='#'>
-            <FontAwesomeIcon icon={faInfo}/>
-          </a></li>
-          <li><a href='#'>
-            <FontAwesomeIcon icon={faComment}/> 
-          </a></li>
-          <li><a href='#'>
-            <FontAwesomeIcon icon={faCircleQuestion}/>
-          </a></li>
-        </ul>
-      </nav>
+      {sideBarState === 'closed' &&
+        <nav className="sideNav closed">
+          <button className='sideNavButton' onClick={() => navButtonClick()}>
+            <ul>
+              <li>
+                <FontAwesomeIcon icon={faUser} className='icon'/>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faLink} className='icon'/> 
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faLink} className='icon'/> 
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faInfo} className='icon'/>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faComment} className='icon'/> 
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faCircleQuestion} className='icon'/>
+              </li>
+            </ul>
+          </button>
+        </nav>
+      }
+      {sideBarState === 'open' &&
+        <nav className="sideNav open">
+         <ul>
+            <li>
+              <button className='logoButton' onClick={() => navButtonClick()}>
+                <FontAwesomeIcon icon={faUser} className='icon'/>
+                <p>User Profile</p>
+              </button>
+            </li>
+            <li><a href='#'>
+              <FontAwesomeIcon icon={faLink} className='icon'/>
+              <p>Other Link</p>
+            </a></li>
+            <li><a href='#'>
+               <FontAwesomeIcon icon={faLink} className='icon'/>
+               <p>Other Link</p>
+            </a></li>
+            <li><a href='#'>
+               <FontAwesomeIcon icon={faInfo} className='icon'/>
+               <p>About Us</p>
+            </a></li>
+            <li><a href='#'>
+              <FontAwesomeIcon icon={faComment} className='icon'/>
+              <p>Contact Us</p> 
+            </a></li>
+            <li><a href='#'>
+               <FontAwesomeIcon icon={faCircleQuestion} className='icon'/>
+               <p>Support</p>
+            </a></li>
+          </ul>
+        </nav>
+      } 
     </>
   )
 }

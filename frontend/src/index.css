@@ -54,13 +54,24 @@ a, a:hover, a:focus, a:active {
   display: flex;
   flex-direction: column;
   height: 98vh;
-  width: 4em;
   box-shadow: 0.5em 0 1em 0 rgba(0,0,0,0.5);
   z-index: 999;
   position: sticky;
   top: 0;
   color: #fefefe;
   position: absolute;
+  background-color: #1e1e1e;
+}
+
+.closed {
+  width: 4em;
+  text-align: center;
+}
+
+.open {
+  width: 19.7em;
+  text-align: left;
+  padding-left: 1.3em;
 }
 
 .sideNav ul {
@@ -68,7 +79,6 @@ a, a:hover, a:focus, a:active {
   margin: 0;
   display: flex;
   flex-direction: column;
-  text-align: center;
   height: 100%
 }
 
@@ -86,8 +96,36 @@ a, a:hover, a:focus, a:active {
   margin-top: auto;
 }
 
+.sideNav li a {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.sideNav li a p {
+  margin-left: 1em;
+}
+
 .logoButton {
   all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.logoButton p {
+  margin-left: 1em;
+}
+
+.sideNavButton {
+  all: unset;
+  height: 100%;
+  cursor: pointer;
+}
+
+.icon {
+  width: 30px;
 }
 
 /* Button Component */
