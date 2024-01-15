@@ -32,151 +32,6 @@ a, a:hover, a:focus, a:active {
   color: inherit;
 }
 
-/* First Page Styling */
-.firstPageContainer {
-  background-image: url('./Images/firstPageBG.jpg');
-  background-size: cover;
-  height: 100vh;
-}
-
-.bOContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.firstPageBucketsContainer {
-  display: flex;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  justify-content: space-evenly;
-}
-
-
-/* Bad Outcome Component */
-
-.boWrapper {
-  display: inline-block;
-  background-color: black;
-  color: #dedede;
-  font-size: 0.45em;
-  padding: 1.2em;
-  border-radius: 1em;
-}
-
-.boWrapper > p {
-  margin: 0;
-}
-
-.boWrapper > h3 {
-  font-size: 1em;
-  font-weight: normal;
-  margin: 0;
-}
-
-.boWrapperBolded {
-  font-size: 1.6em;
-  font-weight: bold;
-}
-
-.boWrapperSummary {
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.boBubblesWrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.boBubbles {
-  margin: 0;
-}
-
-.boBubbles > p {
-  border-radius: 0.8em;
-  padding: 0.1em 0.5em;
-}
-
-.boBubbles:nth-of-type(1) {
-  width:35%
-}
-
-.boBubbles:nth-of-type(2) {
-  width:35%
-}
-
-.boBubbles:nth-of-type(3) {
-  width:20%
-}
-
-/* Buckets Component */
-
-.bucketWrapper {
-  color: #dedede;
-  font-size: 0.3em;
-  padding: 0.8em;
-  border-radius: 1em;
-}
-
-.bucketWrapper > p {
-  margin: 0;
-}
-
-.bucketWrapper > h3 {
-  font-size: 1em;
-  font-weight: normal;
-  margin: 0;
-}
-
-/* Second Page Styling */
-.secondPageWrapper {
-  background-image: url('./Images/secondPageBG.jpg');
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.secondPageBucketsContainer {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-
-/* Map Component */
-
-.mapContainer {
-  background-image: url('./Images/world.jpg');
-  background-size: cover;
-  width: 10.95em;
-  height: 3.26em;
-  border-radius: 1em;
-  color: #fefefe;
-}
-
-.mapContainer {
-  padding: 0 0.4em
-}
-
-/* Buckets Two Component */
-
-.bOTBubbleText {
-  padding: 0.3em;
-  font-size: 1.7em;
-}
-
-.greybox {
-  background-color: #27272a;
-  border-radius: 1em;
-}
-
-.greybox > p {
-  padding: 0.7em;
-  font-size: 3em;
-}
-
 /* Third Page */
 
 .thirdPageContainer {
@@ -190,6 +45,7 @@ a, a:hover, a:focus, a:active {
   grid-template-columns: 19% 19% 19% 19% 19%;
   justify-content: space-evenly;
   justify-items: center;
+  padding-left: 4em;
 }
 
 /* Nav Component */
@@ -204,6 +60,7 @@ a, a:hover, a:focus, a:active {
   position: sticky;
   top: 0;
   color: #fefefe;
+  position: absolute;
 }
 
 .sideNav ul {
@@ -238,7 +95,7 @@ a, a:hover, a:focus, a:active {
 .filterButtonContainer {
   width: 100%;
   height: 3em;
-  padding-left: 2.5em;
+  padding-left: 5em;
   margin-bottom: 1.5em;
   margin-top: 4em;
   display: flex;
@@ -327,6 +184,7 @@ a, a:hover, a:focus, a:active {
   padding: 0.6em;
   background-size: cover;
   background-position: center;
+  margin-bottom: 1em;
 }
 
 .infoTopLeft {
@@ -363,4 +221,31 @@ a, a:hover, a:focus, a:active {
   margin-top: 2em;
   text-align: right;
   font-size: 0.8em;
+}
+
+@media screen and (min-width: 1331px) and (max-width: 1610px) {
+  .infoBoxWrapper {
+    grid-template-columns: 19% 19% 19% 19%;
+    padding-left: 3em;
+  }
+}
+
+@media screen and (min-width: 1066px) and (max-width: 1331px) {
+  .infoBoxWrapper {
+    grid-template-columns: 19% 19% 19%;
+    padding-left: 1.3em;
+  }
+}
+
+@media screen and (min-width: 814px) and (max-width: 1066px) {
+  .infoBoxWrapper {
+    grid-template-columns: 19% 19%;
+    padding-left: 0em;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 814px) {
+  .infoBoxWrapper {
+    grid-template-columns: 19%;
+  }
 }

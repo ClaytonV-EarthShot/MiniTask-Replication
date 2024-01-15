@@ -1,0 +1,144 @@
+/* First Page Styling */
+.firstPageContainer {
+  background-image: url('./Images/firstPageBG.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.bOContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.firstPageBucketsContainer {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  justify-content: space-evenly;
+}
+
+
+/* Bad Outcome Component */
+
+.boWrapper {
+  display: inline-block;
+  background-color: black;
+  color: #dedede;
+  font-size: 0.45em;
+  padding: 1.2em;
+  border-radius: 1em;
+}
+
+.boWrapper > p {
+  margin: 0;
+}
+
+.boWrapper > h3 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+}
+
+.boWrapperBolded {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.boWrapperSummary {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.boBubblesWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boBubbles {
+  margin: 0;
+}
+
+.boBubbles > p {
+  border-radius: 0.8em;
+  padding: 0.1em 0.5em;
+}
+
+.boBubbles:nth-of-type(1) {
+  width:35%
+}
+
+.boBubbles:nth-of-type(2) {
+  width:35%
+}
+
+.boBubbles:nth-of-type(3) {
+  width:20%
+}
+
+/* Buckets Component */
+
+.bucketWrapper {
+  color: #dedede;
+  font-size: 0.3em;
+  padding: 0.8em;
+  border-radius: 1em;
+}
+
+.bucketWrapper > p {
+  margin: 0;
+}
+
+.bucketWrapper > h3 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Second Page Styling */
+.secondPageWrapper {
+  background-image: url('./Images/secondPageBG.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.secondPageBucketsContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+/* Map Component */
+
+.mapContainer {
+  background-image: url('./Images/world.jpg');
+  background-size: cover;
+  width: 10.95em;
+  height: 3.26em;
+  border-radius: 1em;
+  color: #fefefe;
+}
+
+.mapContainer {
+  padding: 0 0.4em
+}
+
+/* Buckets Two Component */
+
+.bOTBubbleText {
+  padding: 0.3em;
+  font-size: 1.7em;
+}
+
+.greybox {
+  background-color: #27272a;
+  border-radius: 1em;
+}
+
+.greybox > p {
+  padding: 0.7em;
+  font-size: 3em;
+}
