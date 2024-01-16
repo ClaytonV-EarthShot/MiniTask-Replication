@@ -52,46 +52,25 @@ export default function Third() {
 
   useEffect(() => {
     filterCities();
-    // console.log('These are the current cities in the list');
-    // console.dir(cities);
   }, [selectedFilters]);
 
   const filterCities = () => {
     if (selectedFilters.length > 0) {
       let i = cities;
-      selectedFilters.map((filterCategory) => {
-        let j = null;
-        switch(filterCategory) {
+
+      selectedFilters.forEach((filter) => {
+        switch(filter) {
           case 'Large Population':
-            j = cities.filter((city) => city.population >= 1000000);
-            j.map((cityJ) => {
-              i = i.filter((cityI) => cityI === cityJ);
-            });
+            i = i.filter((city) => city.population >= 1000000);
             break;
           case 'Small Population':
-            j = cities.filter((city) => city.population < 1000000);
-            let tempArray = [];
-            j.map((city) => {
-              let index = i.indexOf(city);
-              let splicedCity = i.splice(index);
-              tempArray.push('hello');
-              console.dir(splicedCity);
-              // tempArray.push(splicedCity);
-              // tempArray = tempArray.flat;
-            });
-            // i = tempArray;
+            i = i.filter((city) => city.population < 1000000);
             break;
           case 'Large Area':
-            j = cities.filter((city) => city.size >= 600);
-            j.map((cityJ) => {
-              i = i.filter((cityI) => cityI === cityJ);
-            });
+            i = i.filter((city) => city.size >= 600);  
             break;
           case 'Small Area':
-            j = cities.filter((city) => city.size < 600);
-            j.map((cityJ) => {
-              i = i.filter((cityI) => cityI === cityJ);
-            });
+            i = i.filter((city) => city.size < 600);  
             break;
         }
       })
@@ -136,7 +115,6 @@ export default function Third() {
               />
             ))}
           </div>    
-        
         </div>
       </div>
     </>
