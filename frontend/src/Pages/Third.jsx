@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import InfoBox from "../Components/InfoBox";
 import SideNav from '../Components/SideNav';
+import InfoBoxModal from '../Components/InfoBoxModal';
 
 export default function Third() {
   const [cities, setCities] = useState([]);
@@ -83,6 +84,7 @@ export default function Third() {
   return (
     <>
       <div className='thirdPageContainer'>
+        <InfoBoxModal />
         <SideNav />
 
         <div style={{display: 'flex', flexDirection: 'column', width: '93%'}}>
