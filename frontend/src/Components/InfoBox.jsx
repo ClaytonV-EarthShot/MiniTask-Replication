@@ -1,23 +1,21 @@
-export default function InfoBox({cityName, bgImage, cityPopulation, citySize, cityNumber}) {
+export default function InfoBox({key, cityName, bgImage, cityPopulation, citySize, cityNumber}) {
   
   const imageName = `url('${bgImage}')`
   const population = cityPopulation.toLocaleString('en', {useGrouping: true});
   
   return (
     <>
-      <button className='infoBoxContainerButton'>
-        <div className='infoBoxContainer' style={{
-            backgroundImage: 
-              `radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.4) 100%), 
-              ${imageName}`,
-          }}>
-            <p className='infoTopLeft'>#{cityNumber}</p>
-            <p className='infoTopRight'></p>
-            <p className='infoCityName'>{cityName}</p>
-            <p className='infoBottomLeft'>{population}</p>
-            <p className='infoBottomRight'>{citySize}km<sup style={{fontSize:'0.6em'}}>2</sup></p>
-        </div>
-      </button>
+      <div className='infoBoxContainer' style={{
+          backgroundImage: 
+            `radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.4) 100%), 
+            ${imageName}`,
+        }}>
+          <p className='infoTopLeft'>#{cityNumber}</p>
+          <p className='infoTopRight'></p>
+          <p className='infoCityName'>{cityName}</p>
+          <p className='infoBottomLeft'>{population}</p>
+          <p className='infoBottomRight'>{citySize}km<sup style={{fontSize:'0.6em'}}>2</sup></p>
+      </div>
     </>
   )
 }

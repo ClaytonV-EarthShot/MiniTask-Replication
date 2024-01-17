@@ -8,6 +8,10 @@ export default function Third() {
   const [cities, setCities] = useState([]);
   const [filteredCities, setFilteredCities] = useState(cities);
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const [modalVisibility, setModalVisibility] = useState('hidden');
+  const [modalCity, setModalCity] = useState({});
+
+  console.log(`This the modal visibility: ${modalVisibility}`);
 
   let filters = [
     {
@@ -81,10 +85,17 @@ export default function Third() {
     }
   }
 
+  const openModal = (city) => {
+    setModalCity(city);
+    setModalVisibility('visible');
+  }
+
   return (
     <>
       <div className='thirdPageContainer'>
-        <InfoBoxModal />
+        
+        <InfoBoxModal city={modalCity} visibility={modalVisibility}/>
+        
         <SideNav />
 
         <div style={{display: 'flex', flexDirection: 'column', width: '93%'}}>
@@ -107,14 +118,17 @@ export default function Third() {
 
           <div className='infoBoxWrapper'>
             {filteredCities && filteredCities.map((city, index) => (
-              <InfoBox 
-                key={city._id}
-                cityNumber={index + 1}
-                cityName={city.name}
-                bgImage={city.imageLinkName}
-                cityPopulation={city.population}
-                citySize={city.size}
-              />
+              <button className='infoBoxContainerButton'
+              onClick={() => openModal(city)}>
+                <InfoBox 
+                  key={city._id}
+                  cityNumber={index + 1}
+                  cityName={city.name}
+                  bgImage={city.imageLinkName}
+                  cityPopulation={city.population}
+                  citySize={city.size}
+                />
+              </button>
             ))}
           </div>    
         </div>
