@@ -1,3 +1,8 @@
+html, body {
+  overflow: auto;
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -36,16 +41,8 @@ a, a:hover, a:focus, a:active {
 
 .thirdPageContainer {
   display: flex;
-  height: fit-content;
-}
-
-.infoBoxWrapper {
+  height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: 19% 19% 19% 19% 19%;
-  justify-content: space-evenly;
-  justify-items: center;
-  padding-left: 4em;
 }
 
 /* Nav Component */
@@ -56,11 +53,11 @@ a, a:hover, a:focus, a:active {
   height: 98vh;
   box-shadow: 0.5em 0 1em 0 rgba(0,0,0,0.5);
   z-index: 990;
-  position: sticky;
   top: 0;
   color: #fefefe;
-  position: absolute;
+  position: sticky;
   background-color: #1e1e1e;
+  margin-right: 3em;
 }
 
 .closed {
@@ -131,9 +128,8 @@ a, a:hover, a:focus, a:active {
 /* Button Component */
 
 .filterButtonContainer {
-  width: 100%;
+  width: 90%;
   height: 3em;
-  padding-left: 5em;
   margin-bottom: 1.5em;
   margin-top: 4em;
   display: flex;
@@ -209,10 +205,18 @@ a, a:hover, a:focus, a:active {
 
 /* Info Box Component */
 
+.infoBoxWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 0;
+  gap: 1em 1em;
+}
+
 .infoBoxContainer {
   display: grid;
-  height: 10.75em;
-  width: 10.75em;
+  height: 15rem;
+  width: 15rem;
   grid-template-rows: 25% 25% 25% 25%;
   grid-template-columns: 25% 25% 25% 25%;
   color: #fefefe;
@@ -222,7 +226,6 @@ a, a:hover, a:focus, a:active {
   padding: 0.6em;
   background-size: cover;
   background-position: center;
-  margin-bottom: 1em;
 }
 
 .infoBoxContainer:hover {
@@ -273,14 +276,14 @@ a, a:hover, a:focus, a:active {
 /* Info Box Modal Component */
 
 .infoBoxModalWrapper {
-  position:absolute;
-  z-index: 999;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 800;
 }
 
 .infoBoxModalContainer {
@@ -288,6 +291,9 @@ a, a:hover, a:focus, a:active {
   height: 80%;
   width: 70%;
   border-radius: 1.7em;
+  z-index: 990;
+  position: sticky;
+  top: 2em;
 }
 
 .modalHeader {
@@ -300,12 +306,9 @@ a, a:hover, a:focus, a:active {
 }
 
 .modalTitleContainer {
-  padding-top: 0.5em;
   display: flex;
-}
-
-.modalTitleContainer > div {
-  background-color: 'pink'
+  height: 100%;
+  height: 65%;
 }
 
 .exitButton {
@@ -314,10 +317,10 @@ a, a:hover, a:focus, a:active {
 }
 
 .modalButtonContainer {
-  height: 55%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  height:35%;
 }
 
 .modalButton {
@@ -327,7 +330,11 @@ a, a:hover, a:focus, a:active {
   cursor: pointer;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
-  height: 60%;
+  height: 80%;
+}
+
+.modalButton.clicked {
+  background-color: #333333;
 }
 
 .modalButton:hover {
@@ -337,32 +344,29 @@ a, a:hover, a:focus, a:active {
 
 .modalContent {
   padding: 2em;
+  height: 85%;
 }
 
 @media screen and (min-width: 1331px) and (max-width: 1610px) {
   .infoBoxWrapper {
-    grid-template-columns: 19% 19% 19% 19%;
-    padding-left: 3em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1066px) and (max-width: 1331px) {
   .infoBoxWrapper {
-    grid-template-columns: 19% 19% 19%;
-    padding-left: 1.3em;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 814px) and (max-width: 1066px) {
   .infoBoxWrapper {
-    grid-template-columns: 19% 19%;
-    padding-left: 0em;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 814px) {
   .infoBoxWrapper {
-    grid-template-columns: 19%;
-    padding-left: 1em;
+    grid-template-columns: 1fr;
   }
 }

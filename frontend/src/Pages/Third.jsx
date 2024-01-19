@@ -8,10 +8,8 @@ export default function Third() {
   const [cities, setCities] = useState([]);
   const [filteredCities, setFilteredCities] = useState(cities);
   const [selectedFilters, setSelectedFilters] = useState([]);
-  const [modalVisibility, setModalVisibility] = useState('hidden');
   const [modalCity, setModalCity] = useState({});
-
-  console.log(`This the modal visibility: ${modalVisibility}`);
+  const [isVisible, setVisible] = useState(false);
 
   let filters = [
     {
@@ -87,14 +85,14 @@ export default function Third() {
 
   const openModal = (city) => {
     setModalCity(city);
-    setModalVisibility('visible');
+    setVisible(true);
   }
 
   return (
     <>
       <div className='thirdPageContainer'>
         
-        <InfoBoxModal city={modalCity} visibility={modalVisibility}/>
+        <InfoBoxModal city={modalCity} visibility={isVisible} closeModal={() => setVisible(false)}/>
         
         <SideNav />
 
