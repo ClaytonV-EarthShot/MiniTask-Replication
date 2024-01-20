@@ -1,6 +1,6 @@
 export default function InfoBox({cityName, bgImage, cityPopulation, citySize, cityNumber}) {
   
-  const imageName = `url('${bgImage}')`
+  const imageName = `url('${bgImage}')`;
   const population = cityPopulation.toLocaleString('en', {useGrouping: true});
   
   return (

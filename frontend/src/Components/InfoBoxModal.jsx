@@ -1,6 +1,10 @@
 import { useState } from "react"
 
 export default function InfoBoxModal({city, visibility, closeModal}) {
+  
+  const imageName = `url('${city.imageLinkName}')`;
+  const mapName = `url('${city.mapLink}')`
+  
   const [tabOne, setTabOne] = useState('clicked');
   const [tabTwo, setTabTwo] = useState('');
   const [tabThree, setTabThree] = useState('');
@@ -56,25 +60,74 @@ export default function InfoBoxModal({city, visibility, closeModal}) {
     {visibility && (
       <div className='infoBoxModalWrapper' onClick={closeModal}>
           <div className='infoBoxModalContainer' onClick={(e) => handleChildElementClick(e)}>
-            <div className='modalHeader'>
+            <div className='modalHeader' style={{
+              backgroundImage: 
+                `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.7) 100%), 
+                ${imageName}`
+            }}>
               <div className='modalTitleContainer'>
-                <div style={{width: '55.5%', display:'flex', justifyContent: 'flex-end'}}>
+                <div style={{width: '60%', display:'flex', justifyContent: 'flex-end', marginTop: '0.5em', fontSize: '1.5em'}}>
                   {city.name}
                 </div>
-                <div style={{width: '42%', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+                <div style={{width: '36%', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <button className='exitButton' onClick={closeModal}>X</button>
                 </div>
               </div>
               <div className='modalButtonContainer'>
-                <button className={`modalButton ${tabOne}`} onClick={() => tabClicked('one')}></button>
-                <button className={`modalButton ${tabTwo}`} onClick={() => tabClicked('two')}></button>
-                <button className={`modalButton ${tabThree}`} onClick={() => tabClicked('three')}></button>
-                <button className={`modalButton ${tabFour}`} onClick={() => tabClicked('four')}></button>
-                <button className={`modalButton ${tabFive}`} onClick={() => tabClicked('five')}></button>
+                <button className={`modalButton ${tabOne}`} onClick={() => tabClicked('one')}>Information</button>
+                <button className={`modalButton ${tabTwo}`} onClick={() => tabClicked('two')}>Environmental</button>
+                <button className={`modalButton ${tabThree}`} onClick={() => tabClicked('three')}>Humanitarian</button>
+                <button className={`modalButton ${tabFour}`} onClick={() => tabClicked('four')}>Category</button>
+                <button className={`modalButton ${tabFive}`} onClick={() => tabClicked('five')}>Category</button>
               </div>
           </div>
-          <div className='modalContent'>
-              <div>Modal Content</div>
+          <div className='modalContentWrapper'>
+              <div className='modalContentContainer'>
+                <div className='modalContent'>
+                  {tabOne === 'clicked' &&
+                    <>
+                      <div className='infoTabContent'>
+                        <div>
+                          <p>{city.description}</p>
+                        </div>
+                        <div>
+                        
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                      </div>
+                      <div className='infoTabMapLinks'>
+                        <div style={{backgroundImage: mapName, height: '20em', width: '30em', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                        </div>
+                      </div>
+                    </>
+                  }
+                  {tabTwo === 'clicked' &&
+                    <div>
+                      You're in tab two.
+                    </div>
+                  }
+                  {tabThree === 'clicked' &&
+                    <div>
+                      You're in tab three.
+                    </div>
+                  }
+                  {tabFour === 'clicked' &&
+                    <div>
+                      You're in tab four.
+                    </div>
+                  }
+                  {tabFive === 'clicked' &&
+                    <div>
+                      You're in tab five.
+                    </div>
+                  }
+                </div>
+              </div>
           </div>
         </div>
       </div>
