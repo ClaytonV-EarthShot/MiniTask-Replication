@@ -2,7 +2,7 @@ const express = require('express');
 const {
   getBucketOne,
   createBucketOne
-} = require('../controllers/bucketOneController')
+} = require('../../controllers/bucketOne/bucketOneController');
 
 const router = express.Router();
 

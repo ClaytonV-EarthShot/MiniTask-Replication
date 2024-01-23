@@ -1,4 +1,4 @@
-const FoodVsConsumption = require('../models/foodVsConsumptionModel');
+const FoodVsConsumption = require('../../models/bucketOne/foodVsConsumptionModel');
 const mongoose = require('mongoose');
 
 // get a single bucket item
@@ -20,10 +20,38 @@ const getFoodVsConsumption = async (req, res) => {
 
 // create a new bucket item
 const createFoodVsConsumption = async (req, res) => {
-  const {supply: [{caloricSupply, proteinSupply, animalBasedFood, fatSupply, dietaryEnergy, minimumDietaryEnergy}], foodWaste: [{retail, outOfHomeConsumption, household}]} = req.body;
+  const {
+    supply: [{
+      caloricSupply,
+      proteinSupply,
+      animalBasedFood,
+      fatSupply,
+      dietaryEnergy,
+      minimumDietaryEnergy
+    }],
+    foodWaste: [{
+      retail,
+      outOfHomeConsumption,
+      household
+    }]
+  } = req.body;
 
   try {
-    const foodVsConsumption = await FoodVsConsumption.create({supply: [{caloricSupply, proteinSupply, animalBasedFood, fatSupply, dietaryEnergy, minimumDietaryEnergy}], foodWaste: [{retail, outOfHomeConsumption, household}]});
+    const foodVsConsumption = await FoodVsConsumption.create({
+      supply: [{
+        caloricSupply,
+        proteinSupply,
+        animalBasedFood,
+        fatSupply,
+        dietaryEnergy,
+        minimumDietaryEnergy
+      }],
+      foodWaste: [{
+        retail,
+        outOfHomeConsumption,
+        household
+      }]
+    });
     res.status(200).json(foodVsConsumption);
   } catch (error) {
     res.status(400).json({error: error.message})

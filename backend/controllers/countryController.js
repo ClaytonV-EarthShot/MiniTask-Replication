@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const getCountries = async (req, res) => {
   const countries = await Country.find({}).sort({createdAt: -1})
 
-  res.status(200).json(cities);
+  res.status(200).json(countries);
 }
 
 // get a single country
@@ -22,7 +22,7 @@ const getCountry = async (req, res) => {
     return res.status(404).json({error: 'Country does not exist'});
   }
 
-  res.status(200).json(city);
+  res.status(200).json(country);
 }
 
 // create new country

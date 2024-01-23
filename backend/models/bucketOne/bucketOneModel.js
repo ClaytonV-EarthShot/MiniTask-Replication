@@ -7,6 +7,16 @@ const bucketOneSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'FoodVsConsumption',
     required: true
+  },
+  agriculture: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Agriculture',
+    required: true
+  },
+  distribution: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Distribution',
+    required: true
   }
 });
 

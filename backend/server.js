@@ -1,11 +1,18 @@
 require('dotenv'). config();
 
 const express = require('express');
-const cityRoutes = require('./routes/cities');
-const countryRoutes = require('./routes/countries');
-const foodVsConsumptionRoutes = require('./routes/foodVsConsumption');
-const bucketOneRoutes = require('./routes/bucketOne');
 const mongoose = require('mongoose');
+
+// Test Route
+const cityRoutes = require('./routes/cities');
+
+// Country Route
+const countryRoutes = require('./routes/countries');
+
+//Bucket #1 Routes
+const bucketOneRoutes = require('./routes/bucketOne/bucketOne');
+const foodVsConsumptionRoutes = require('./routes/bucketOne/foodVsConsumption');
+const agricultureRoutes = require('./routes/bucketOne/agriculture');
 
 // express
 const app = express()
@@ -18,11 +25,16 @@ app.use((req, res, next) => {
   next();
 })
 
-// route handler
+// Test Route Handler
 app.use('/api/cities', cityRoutes);
+
+// Country Route Handler
 app.use('/api/countries', countryRoutes);
-app.use('/api/foodvsconsumption', foodVsConsumptionRoutes)
+
+// Bucket #1 Route Handler
 app.use('/api/bucketone', bucketOneRoutes);
+app.use('/api/foodvsconsumption', foodVsConsumptionRoutes);
+app.use('/api/agriculture', agricultureRoutes);
 
 // connect to db
 mongoose.connect(process.env.MONGODB)

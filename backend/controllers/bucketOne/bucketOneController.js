@@ -1,4 +1,4 @@
-const BucketOne = require('../models/bucketOneModel');
+const BucketOne = require('../../models/bucketOne/bucketOneModel');
 const mongoose = require('mongoose');
 
 // get a single bucket item
@@ -20,10 +20,10 @@ const getBucketOne = async (req, res) => {
 
 // create a new bucket
 const createBucketOne = async (req, res) => {
-  const {foodVsConsumption} = req.body;
+  const {foodVsConsumption, agriculture, distribution} = req.body;
 
   try {
-    const bucketOne = await BucketOne.create({foodVsConsumption});
+    const bucketOne = await BucketOne.create({foodVsConsumption, agriculture, distribution});
     res.status(200).json(bucketOne);
   } catch (error) {
     res.status(400).json({error: error.message})

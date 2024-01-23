@@ -33,11 +33,17 @@ export default function Third() {
   useEffect(() => {
     const fetchCities = async () => {
       const response = await fetch('/api/cities');
-      const json = await response.json()
+      const countryResponse = await fetch('/api/countries');
+      const json = await response.json();
+      const countryJson = await countryResponse.json();
 
       if (response.ok) {
         setCities(json);
         setFilteredCities(json);
+      }
+
+      if (countryResponse.ok) {
+        console.log(countryJson);
       }
     }
 

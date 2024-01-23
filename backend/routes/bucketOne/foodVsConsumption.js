@@ -2,7 +2,7 @@ const express = require('express');
 const {
   getFoodVsConsumption,
   createFoodVsConsumption
-} = require('../controllers/foodVsConsumptionController')
+} = require('../../controllers/bucketOne/foodVsConsumptionController');
 
 const router = express.Router();
 
