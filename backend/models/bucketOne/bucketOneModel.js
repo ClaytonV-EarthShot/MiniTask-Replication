@@ -17,6 +17,26 @@ const bucketOneSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Distribution',
     required: true
+  },
+  economic: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Economic',
+    required: true
+  },
+  lifeAsWeKnow: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'LifeAsWeKnow',
+    required: true
+  },
+  malnutrition: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Malnutrition',
+    required: true
+  },
+  nutrientDeficiency: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'NutrientDeficiency',
+    required: true
   }
 });
 

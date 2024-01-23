@@ -20,10 +20,10 @@ const getBucketOne = async (req, res) => {
 
 // create a new bucket
 const createBucketOne = async (req, res) => {
-  const {foodVsConsumption, agriculture, distribution} = req.body;
+  const {foodVsConsumption, agriculture, distribution, economic, lifeAsWeKnow, malnutrition, nutrientDeficiency} = req.body;
 
   try {
-    const bucketOne = await BucketOne.create({foodVsConsumption, agriculture, distribution});
+    const bucketOne = await BucketOne.create({foodVsConsumption, agriculture, distribution, economic, lifeAsWeKnow, malnutrition, nutrientDeficiency});
     res.status(200).json(bucketOne);
   } catch (error) {
     res.status(400).json({error: error.message})

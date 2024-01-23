@@ -13,6 +13,10 @@ const countryRoutes = require('./routes/countries');
 const bucketOneRoutes = require('./routes/bucketOne/bucketOne');
 const foodVsConsumptionRoutes = require('./routes/bucketOne/foodVsConsumption');
 const agricultureRoutes = require('./routes/bucketOne/agriculture');
+const economicRoutes = require('./routes/bucketOne/economic');
+const lifeAsWeKnowRoutes = require('./routes/bucketOne/lifeAsWeKnow');
+const nutrientDeficiencyRoutes = require('./routes/bucketOne/nutrientDeficiency');
+const malnutritionRoutes = require('./routes/bucketOne/malnutrition');
 
 // express
 const app = express()
@@ -35,6 +39,10 @@ app.use('/api/countries', countryRoutes);
 app.use('/api/bucketone', bucketOneRoutes);
 app.use('/api/foodvsconsumption', foodVsConsumptionRoutes);
 app.use('/api/agriculture', agricultureRoutes);
+app.use('/api/economic', economicRoutes);
+app.use('/api/lifeasweknow', lifeAsWeKnowRoutes);
+app.use('/api/nutrientdeficiency', nutrientDeficiencyRoutes);
+app.use('/api/malnutrition', malnutritionRoutes);
 
 // connect to db
 mongoose.connect(process.env.MONGODB)
