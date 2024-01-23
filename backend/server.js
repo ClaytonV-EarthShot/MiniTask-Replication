@@ -2,6 +2,9 @@ require('dotenv'). config();
 
 const express = require('express');
 const cityRoutes = require('./routes/cities');
+const countryRoutes = require('./routes/countries');
+const foodVsConsumptionRoutes = require('./routes/foodVsConsumption');
+const bucketOneRoutes = require('./routes/bucketOne');
 const mongoose = require('mongoose');
 
 // express
@@ -17,6 +20,9 @@ app.use((req, res, next) => {
 
 // route handler
 app.use('/api/cities', cityRoutes);
+app.use('/api/countries', countryRoutes);
+app.use('/api/foodvsconsumption', foodVsConsumptionRoutes)
+app.use('/api/bucketone', bucketOneRoutes);
 
 // connect to db
 mongoose.connect(process.env.MONGODB)
