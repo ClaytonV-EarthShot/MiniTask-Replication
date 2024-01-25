@@ -5,10 +5,14 @@ import SideNav from '../Components/SideNav';
 import InfoBoxModal from '../Components/InfoBoxModal';
 
 export default function Third() {
-  const [cities, setCities] = useState([]);
-  const [filteredCities, setFilteredCities] = useState(cities);
+  // const [cities, setCities] = useState([]);
+  // const [filteredCities, setFilteredCities] = useState(cities);
+  // const [modalCity, setModalCity] = useState({});
+
+  const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState(countries);
+  const [modalCountry, setModalCountry] = useState({});
   const [selectedFilters, setSelectedFilters] = useState([]);
-  const [modalCity, setModalCity] = useState({});
   const [isVisible, setVisible] = useState(false);
 
   let filters = [
@@ -31,25 +35,22 @@ export default function Third() {
   ]
 
   useEffect(() => {
-    const fetchCities = async () => {
-      const response = await fetch('/api/cities');
-      // const countryResponse = await fetch('/api/countries');
-      const bucketOneResponse = await fetch('/api/bucketone');
+    const fetchCountries = async () => {
+      const response = await fetch('/api/countries');
       const json = await response.json();
-      // const countryJson = await countryResponse.json();
-      const bucketOneJson = await bucketOneResponse.json();
+
+      // const bucketOneResponse = await fetch('/api/bucketone');
+      // const bucketOneJson = await bucketOneResponse.json();
 
       if (response.ok) {
-        setCities(json);
-        setFilteredCities(json);
+        console.log('we was okay');
+        setCountries(json);
+        setFilteredCountries(json);
       }
 
-      if (bucketOneResponse.ok) {
-        bucketOneJson.forEach((element) => console.log(element._id));
-      }
     }
 
-    fetchCities();
+    fetchCountries();
   }, []);
 
   const handleFilterButtonClick = (filterCategory) => {
@@ -62,37 +63,37 @@ export default function Third() {
   };
 
   useEffect(() => {
-    filterCities();
+    filterCountries();
   }, [selectedFilters]);
 
-  const filterCities = () => {
+  const filterCountries = () => {
     if (selectedFilters.length > 0) {
-      let i = cities;
+      let i = countries;
 
       selectedFilters.forEach((filter) => {
         switch(filter) {
           case 'Large Population':
-            i = i.filter((city) => city.population >= 1000000);
+            i = i.filter((country) => country.population >= 1000000);
             break;
           case 'Small Population':
-            i = i.filter((city) => city.population < 1000000);
+            i = i.filter((country) => country.population < 1000000);
             break;
           case 'Large Area':
-            i = i.filter((city) => city.size >= 600);  
+            i = i.filter((country) => country.size >= 600);  
             break;
           case 'Small Area':
-            i = i.filter((city) => city.size < 600);  
+            i = i.filter((country) => country.size < 600);  
             break;
         }
       })
-      setFilteredCities(i);
+      setFilteredCountries(i);
     } else {
-      setFilteredCities([...cities]);
+      setFilteredCountries([...countries]);
     }
   }
 
-  const openModal = (city) => {
-    setModalCity(city);
+  const openModal = (country) => {
+    setModalCountry(country);
     setVisible(true);
   }
 
@@ -100,7 +101,7 @@ export default function Third() {
     <>
       <div className='thirdPageContainer'>
         
-        <InfoBoxModal city={modalCity} visibility={isVisible} closeModal={() => setVisible(false)}/>
+        <InfoBoxModal country={modalCountry} visibility={isVisible} closeModal={() => setVisible(false)}/>
         
         <SideNav />
 
@@ -123,16 +124,15 @@ export default function Third() {
           </div>
 
           <div className='infoBoxWrapper'>
-            {filteredCities && filteredCities.map((city, index) => (
+            {filteredCountries && filteredCountries.map((country, index) => (
               <button className='infoBoxContainerButton'
-              onClick={() => openModal(city)}>
+              onClick={() => openModal(country)}>
                 <InfoBox 
-                  key={city._id}
-                  cityNumber={index + 1}
-                  cityName={city.name}
-                  bgImage={city.imageLinkName}
-                  cityPopulation={city.population}
-                  citySize={city.size}
+                  key={country._id}
+                  countryNumber={index + 1}
+                  countryName={country.country}
+                  countryPopulation={country.population}
+                  countryLDC={country.LDC}
                 />
               </button>
             ))}

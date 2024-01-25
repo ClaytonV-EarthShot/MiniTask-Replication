@@ -1,9 +1,6 @@
 import { useState } from "react"
 
-export default function InfoBoxModal({city, visibility, closeModal}) {
-  
-  const imageName = `url('${city.imageLinkName}')`;
-  const mapName = `url('${city.mapLink}')`
+export default function InfoBoxModal({country, visibility, closeModal}) {
   
   const [tabOne, setTabOne] = useState('clicked');
   const [tabTwo, setTabTwo] = useState('');
@@ -60,14 +57,10 @@ export default function InfoBoxModal({city, visibility, closeModal}) {
     {visibility && (
       <div className='infoBoxModalWrapper' onClick={closeModal}>
           <div className='infoBoxModalContainer' onClick={(e) => handleChildElementClick(e)}>
-            <div className='modalHeader' style={{
-              backgroundImage: 
-                `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.7) 100%), 
-                ${imageName}`
-            }}>
+            <div className='modalHeader'>
               <div className='modalTitleContainer'>
                 <div style={{width: '60%', display:'flex', justifyContent: 'flex-end', marginTop: '0.5em', fontSize: '1.5em'}}>
-                  {city.name}
+                  {country.name}
                 </div>
                 <div style={{width: '36%', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <button className='exitButton' onClick={closeModal}>X</button>
@@ -88,7 +81,7 @@ export default function InfoBoxModal({city, visibility, closeModal}) {
                     <>
                       <div className='infoTabContent'>
                         <div>
-                          <p>{city.description}</p>
+                          <p>{country.incomeClassification}</p>
                         </div>
                         <div>
                         
@@ -101,8 +94,7 @@ export default function InfoBoxModal({city, visibility, closeModal}) {
                         </div>
                       </div>
                       <div className='infoTabMapLinks'>
-                        <div style={{backgroundImage: mapName, height: '20em', width: '30em', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-                        </div>
+                        
                       </div>
                     </>
                   }
@@ -135,3 +127,21 @@ export default function InfoBoxModal({city, visibility, closeModal}) {
     </>
   )
 }
+
+
+/* 
+
+ style={{
+              backgroundImage: 
+                `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.7) 100%), 
+                ${imageName}`
+            }}
+
+const imageName = `url('${city.imageLinkName}')`;
+const mapName = `url('${city.mapLink}')`;
+
+<div style={{backgroundImage: mapName, height: '20em', width: '30em', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+</div>
+
+*/
+

@@ -226,6 +226,7 @@ a, a:hover, a:focus, a:active {
   padding: 0.6em;
   background-size: cover;
   background-position: center;
+  background-color:#333333;
 }
 
 .infoBoxContainer:hover {
