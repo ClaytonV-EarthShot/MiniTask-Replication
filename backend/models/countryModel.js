@@ -1,21 +1,21 @@
+const { Int32 } = require('mongodb');
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
 const countrySchema = new Schema({
-  name: {
+  country: {
     type: String,
     required: true
   },
-  bucketOne: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'BucketOne'
-  },
-  population: {
-    type: Number
+  incomeClassification: {
+    type: String
   },
   region: {
     type: String
+  },
+  population: {
+    type: Number
   },
   gniAtlas: {
     type: Number
@@ -24,7 +24,25 @@ const countrySchema = new Schema({
     type: Number
   },
   LDC: {
-    type: Boolean
+    type: String
+  },
+  populationUrban: {
+    type: String
+  },
+  populationRural: {
+    type: String
+  },
+  electricityAccessUrban: {
+    type: String
+  },
+  electricityAccessRural: {
+    type: String
+  },
+  internetConnectivityUrban: {
+    type: String
+  },
+  internetConnectivityRural: {
+    type: String
   }
 });
 

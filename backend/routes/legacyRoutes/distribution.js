@@ -2,7 +2,7 @@ const express = require('express');
 const {
   getDistribution,
   createDistribution
-} = require('../../controllers/bucketOne/distributionController');
+} = require('../../controllers/legacyControllers/distributionController');
 
 const router = express.Router();
 

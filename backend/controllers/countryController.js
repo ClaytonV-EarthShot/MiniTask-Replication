@@ -27,11 +27,39 @@ const getCountry = async (req, res) => {
 
 // create new country
 const createCountry = async (req, res) => {
-  const {name, bucketOne, population, region, gniAtlas, gniPPP, LDC} = req.body;
+  const {
+    country,
+    incomeClassification,
+    region,
+    population,
+    gniAtlas,
+    gniPPP,
+    LDC,
+    populationUrban,
+    populationRural,
+    electricityAccessUrban,
+    electricityAccessRural,
+    internetConnectivityUrban,
+    internetConnectivityRural
+  } = req.body;
 
   try {
-    const country = await Country.create({name, bucketOne, population, region, gniAtlas, gniPPP, LDC});
-    res.status(200).json(country);
+    const countryDoc = await Country.create({
+      country,
+      incomeClassification,
+      region,
+      population,
+      gniAtlas,
+      gniPPP,
+      LDC,
+      populationUrban,
+      populationRural,
+      electricityAccessUrban,
+      electricityAccessRural,
+      internetConnectivityUrban,
+      internetConnectivityRural
+    });
+    res.status(200).json(countryDoc);
   } catch (error) {
     res.status(400).json({error: error.message})
   }

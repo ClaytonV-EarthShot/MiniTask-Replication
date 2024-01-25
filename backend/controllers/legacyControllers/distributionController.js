@@ -1,4 +1,4 @@
-const Distribution = require('../../models/bucketOne/distributionModel');
+const Distribution = require('../../models/legacyModels/distributionModel');
 const mongoose = require('mongoose');
 
 // get a single bucket item

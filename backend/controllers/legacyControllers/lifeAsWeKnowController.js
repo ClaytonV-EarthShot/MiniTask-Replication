@@ -21,20 +21,18 @@ const getLifeAsWeKnow = async (req, res) => {
 // create a new bucket item
 const createLifeAsWeKnow = async (req, res) => {
   const {
-    CoNA,
-    CoCA,
-    premiumOfCoCaCoNa,
-    percentAverageIncomeCoNA,
-    percentAverageIncomeCoCA
+    consumerExpenditurePercent,
+    foodExpenditureInDollar,
+    consumerExpenditureInDollar,
+    averagePersonDiet
   } = req.body;
 
   try {
     const lifeAsWeKnow = await LifeAsWeKnow.create({
-      CoNA,
-      CoCA,
-      premiumOfCoCaCoNa,
-      percentAverageIncomeCoNA,
-      percentAverageIncomeCoCA
+      consumerExpenditurePercent,
+      foodExpenditureInDollar,
+      consumerExpenditureInDollar,
+      averagePersonDiet
     });
     res.status(200).json(lifeAsWeKnow);
   } catch (error) {

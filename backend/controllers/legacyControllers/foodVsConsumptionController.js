@@ -25,6 +25,7 @@ const createFoodVsConsumption = async (req, res) => {
       caloricSupply,
       proteinSupply,
       animalBasedFood,
+      plantBasedFood,
       fatSupply,
       dietaryEnergy,
       minimumDietaryEnergy
@@ -42,6 +43,7 @@ const createFoodVsConsumption = async (req, res) => {
         caloricSupply,
         proteinSupply,
         animalBasedFood,
+        plantBasedFood,
         fatSupply,
         dietaryEnergy,
         minimumDietaryEnergy

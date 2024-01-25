@@ -22,7 +22,7 @@ const getMalnutrition = async (req, res) => {
 const createMalnutrition = async (req, res) => {
   const {
     prevalence: [{
-      ofUndernourishme,
+      ofUndernourishment,
       ofStunting,
       ofWasting,
       underweight,
@@ -37,7 +37,7 @@ const createMalnutrition = async (req, res) => {
   try {
     const malnutrition = await Malnutrition.create({
       prevalence: [{
-        ofUndernourishme,
+        ofUndernourishment,
         ofStunting,
         ofWasting,
         underweight,
