@@ -6,7 +6,7 @@ import { faCloudRain, faTractor } from '@fortawesome/free-solid-svg-icons';
 
 export default function InfoBoxModal({country, visibility, closeModal}) {
   
-  const imageName = `url('https://images.pexels.com/photos/19872/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`;
+  const imageName = `url('https://images.pexels.com/photos/189833/pexels-photo-189833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`;
   
   const [tabOne, setTabOne] = useState('clicked');
   const [tabTwo, setTabTwo] = useState('');
@@ -86,15 +86,10 @@ export default function InfoBoxModal({country, visibility, closeModal}) {
                   ${imageName}`
             }}>
               <div className='modalTitleContainer'>
-                <div style={{display: 'flex', flexDirection: "column", marginTop: '0.5em', fontSize: '1.5em', textAlign: 'center', paddingLeft: '10em', marginRight: '7em'}}>
-                  <div>
-                    {country.country}
-                  </div>
-                  <div>
-                    {country.region}
-                  </div>
+                <div style={{display: 'flex', flexDirection: "column", marginTop: '0.5em', fontSize: '1.5em', textAlign: 'center', width: '63%', alignItems: 'flex-end'}}>
+                    <p style={{marginTop: '0.2em'}}>{country.country}<br/>{country.region}</p>
                 </div>
-                <div style={{display: 'flex', justifyContent: 'flex-end',alignItems: 'flex-start'}}>
+                <div style={{display: 'flex', justifyContent: 'flex-end',alignItems: 'flex-start', width: '33%'}}>
                   <button className='exitButton' onClick={closeModal}>X</button>
                 </div>
               </div>
