@@ -1,4 +1,7 @@
-import { useState } from "react"
+import { useState, useEffect } from "react";
+import DoughnutComp from "./DoughnutComp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleQuestion, faComment, faUser, faInfo, faLink } from '@fortawesome/free-solid-svg-icons';
 
 export default function InfoBoxModal({country, visibility, closeModal}) {
   
@@ -7,6 +10,23 @@ export default function InfoBoxModal({country, visibility, closeModal}) {
   const [tabThree, setTabThree] = useState('');
   const [tabFour, setTabFour] = useState('');
   const [tabFive, setTabFive] = useState('');
+  const [bucketOne, setBucketOne] = useState();
+
+  useEffect(() => {
+    const fetchBucketOne = async () => {
+      const response = await fetch(`/api/bucketone/${country.bucketOne}`);
+      const json = await response.json();
+
+      if (response.ok) {
+        setBucketOne(json);
+      }
+    }
+
+    fetchBucketOne();
+  }, []);
+
+  console.log('This is the bucketOne object:');
+  console.dir(bucketOne);
 
   const handleChildElementClick = (e) => {
     e.stopPropagation()
@@ -68,7 +88,7 @@ export default function InfoBoxModal({country, visibility, closeModal}) {
               </div>
               <div className='modalButtonContainer'>
                 <button className={`modalButton ${tabOne}`} onClick={() => tabClicked('one')}>Information</button>
-                <button className={`modalButton ${tabTwo}`} onClick={() => tabClicked('two')}>Environmental</button>
+                <button className={`modalButton ${tabTwo}`} onClick={() => tabClicked('two')}>Food & Agriculture</button>
                 <button className={`modalButton ${tabThree}`} onClick={() => tabClicked('three')}>Humanitarian</button>
                 <button className={`modalButton ${tabFour}`} onClick={() => tabClicked('four')}>Category</button>
                 <button className={`modalButton ${tabFive}`} onClick={() => tabClicked('five')}>Category</button>
@@ -99,9 +119,30 @@ export default function InfoBoxModal({country, visibility, closeModal}) {
                     </>
                   }
                   {tabTwo === 'clicked' &&
-                    <div>
-                      You're in tab two.
-                    </div>
+                    <>
+                      <div className='foodAndAgrWrapper'>
+                        <h1>What Nutrients Is The Public Lacking?</h1>
+                        <div className='fAANutrition'>
+                          <span>
+                            <DoughnutComp />
+                          </span>
+                          <div className='fAANutritionFactList'>
+                            <div className='fAANutritionFactPositive'>
+                              <p className='fAANutritionFactItem'>🟢 Lowest deficieny is: </p>
+                              <p className='fAANutritionFactItem'>🟢 Lowest deficieny is: </p>
+                              <p className='fAANutritionFactItem'>🟢 Lowest deficieny is: </p>
+                            </div>
+                            <div className='fAANutritionFactNegative'>
+                              <p className='fAANutritionFactItem'>🔴 Highest deficiency is: </p>
+                              <p className='fAANutritionFactItem'>🔴 Highest deficiency is: </p>
+                              <p className='fAANutritionFactItem'>🔴 Highest deficiency is: </p>
+                            </div>
+                          </div>
+                        </div>
+                        <h1>Irrigated vs. Rainfed Crops</h1>
+                      </div>
+                      
+                    </>
                   }
                   {tabThree === 'clicked' &&
                     <div>
