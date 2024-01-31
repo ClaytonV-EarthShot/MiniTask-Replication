@@ -43,6 +43,9 @@ const countrySchema = new Schema({
   },
   internetConnectivityRural: {
     type: String
+  },
+  imageLink: {
+    type: String
   }
 });
 

@@ -133,6 +133,7 @@ export default function Third() {
                   countryName={country.country}
                   countryPopulation={country.population}
                   countryLDC={country.LDC}
+                  countryImageLink={country.imageLink}
                 />
               </button>
             ))}

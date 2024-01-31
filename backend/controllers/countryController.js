@@ -40,7 +40,8 @@ const createCountry = async (req, res) => {
     electricityAccessUrban,
     electricityAccessRural,
     internetConnectivityUrban,
-    internetConnectivityRural
+    internetConnectivityRural,
+    imageLink
   } = req.body;
 
   try {
@@ -57,7 +58,8 @@ const createCountry = async (req, res) => {
       electricityAccessUrban,
       electricityAccessRural,
       internetConnectivityUrban,
-      internetConnectivityRural
+      internetConnectivityRural,
+      imageLink
     });
     res.status(200).json(countryDoc);
   } catch (error) {

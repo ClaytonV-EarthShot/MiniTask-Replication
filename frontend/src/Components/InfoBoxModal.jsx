@@ -6,7 +6,11 @@ import { faCloudRain, faTractor } from '@fortawesome/free-solid-svg-icons';
 
 export default function InfoBoxModal({country, visibility, closeModal}) {
   
-  const imageName = `url('https://images.pexels.com/photos/189833/pexels-photo-189833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`;
+  let imageName = '';
+
+  if(country.imageLink) {
+    imageName = `url('${country.imageLink})`;
+  }
   
   const [tabOne, setTabOne] = useState('clicked');
   const [tabTwo, setTabTwo] = useState('');
