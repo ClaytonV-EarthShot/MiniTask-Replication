@@ -279,7 +279,8 @@ a, a:hover, a:focus, a:active {
 
 .infoBoxModalWrapper {
   width: 100vw;
-  height: 200%;
+  height: fit-content;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -309,13 +310,31 @@ a, a:hover, a:focus, a:active {
 }
 
 .modalTitleContainer {
-  display: flex;
+  display: grid;
   height: 65%;
+  grid-template-columns: 30% 40% 30%;
+}
+
+.modalTitleCountryRegion {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  text-align: center;
+  grid-column: 2/3;
+}
+
+.modalTitleExitContainer {
+  display: flex;
+  grid-column: 3/3;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-size: 1.5em;
 }
 
 .exitButton {
   all: unset;
   cursor: pointer;
+  margin-right: 1.3em;
 }
 
 .modalButtonContainer {
@@ -364,6 +383,8 @@ a, a:hover, a:focus, a:active {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .modalContent {
@@ -371,7 +392,6 @@ a, a:hover, a:focus, a:active {
   height: 96.5%;
   width: 96.5%;
   border-radius: 1em;
-  display: flex;
 }
 
 /* Modal  >>> Information Tab */
@@ -385,16 +405,103 @@ a, a:hover, a:focus, a:active {
   justify-content: space-between;
 }
 
-.infoTabContent > div {
-  background-color: #808080;
-  border-radius: 1em;
-  padding: 1em;
+.incomeClassContainer {
+  display: flex;
+  font-size: 1.2em;
+  align-items: center;
 }
 
-.infoTabMapLinks {
+.incomeClassContainer > p {
+  margin: 0
+}
+
+.gniTable {
   display: flex;
-  justify-items: center;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.gniContent {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.gniContent > p {
+  margin: 0;
+  border: solid 1.5px #333333;
+  background-color: #404040;
+}
+
+.gniContent > p:nth-child(2) {
+  background-color: #4d4d4d;
+}
+
+.populationBarContainer {
+  display: flex;
+  font-size: 3em;
+  align-items: center;
+}
+
+.populationBar {
+  height: 0.5em;
+  background-color: #d9d9d9;
+  position: relative;
+  border-radius: 1em;
+  width: 80%;
+}
+
+.populationBarProgress {
+  height: 0.5em;
+  background-color: rgb(76, 192, 38);
+  position: absolute;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.populationBar > p {
+  font-size: 0.4em;
+  margin: 0;
+  margin-left: 0.6em;
+  color: black;
+  position: absolute;
+  z-index: 1;
+  font-weight: 500;
+}
+
+.ruralLife {
   padding: 1em;
+  width: 100%;
+}
+
+.ruralContentWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ruralLifeContentContainer {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.ruralContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5em;
+  text-align: center;
+  width: 33%;
+}
+
+.ruralContent > h4 {
+  margin-bottom: 0.2;
+}
+
+.ruralContent > p {
+  margin: 0;
 }
 
 /* Modal  >>> Food and Agriculture Tab */
@@ -516,6 +623,7 @@ td {
   width: 95%;
   border-radius: 1em;
   padding: 1em;
+  margin-bottom: 1em;
 }
 
 .fAABadOutcomeInfoWrapper {
