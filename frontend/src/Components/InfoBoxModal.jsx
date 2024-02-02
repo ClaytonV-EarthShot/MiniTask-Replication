@@ -3,7 +3,17 @@ import DoughnutComp from "./DoughnutComp";
 import BarComp from "./BarComp";
 import ModalInfoTab from "./ModalInfoTab";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudRain, faTractor } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCloudRain,
+  faTractor,
+  faStore,
+  faUtensils,
+  faHouse,
+  faHammer,
+  faTruck,
+  faCartShopping,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function InfoBoxModal({ country, visibility, closeModal }) {
   let imageName = "";
@@ -243,6 +253,72 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
                               <td>No Data Recorded</td>
                             </tr>
                           </table>
+                        </div>
+                        <div className="fAAWasteBreakdown">
+                          <h1>Food Waste Breakdown</h1>
+                          <div className="fAAWasteBreakdownInfo">
+                            <div className="fAAWasteCapita">
+                              <h2 style={{ marginBottom: "3em" }}>
+                                Food Waste Per Capita
+                              </h2>
+                              <div className="fAAWasteContent">
+                                <FontAwesomeIcon
+                                  icon={faStore}
+                                  style={{ fontSize: "2.5em", width: "2em" }}
+                                />
+                                <p>Retail: 15.64</p>
+                              </div>
+                              <div className="fAAWasteContent">
+                                <FontAwesomeIcon
+                                  icon={faUtensils}
+                                  style={{ fontSize: "2.5em", width: "2em" }}
+                                />
+                                <p>Out of home consumption: 45.60</p>
+                              </div>
+                              <div className="fAAWasteContent">
+                                <FontAwesomeIcon
+                                  icon={faHouse}
+                                  style={{ fontSize: "2.5em", width: "2em" }}
+                                />
+                                <p>Household: 63.92</p>
+                              </div>
+                            </div>
+                            <div className="fAAWasteDistribution">
+                              <h2>Food Waste Through Distribution</h2>
+                              <h3>
+                                Food Wasted From Moment of Production to
+                                Someone's Table: 30%
+                              </h3>
+                              <div className="fAAWasteContent">
+                                <FontAwesomeIcon
+                                  icon={faHammer}
+                                  style={{ fontSize: "2.5em", width: "2em" }}
+                                />
+                                <p>Production and Processing: 10%</p>
+                              </div>
+                              <div className="fAAWasteContent">
+                                <FontAwesomeIcon
+                                  icon={faTruck}
+                                  style={{ fontSize: "2.5em", width: "2em" }}
+                                />
+                                <p>Transportation: 10%</p>
+                              </div>
+                              <div className="fAAWasteContent">
+                                <FontAwesomeIcon
+                                  icon={faCartShopping}
+                                  style={{ fontSize: "2.5em", width: "2em" }}
+                                />
+                                <p>Retailers: 10%</p>
+                              </div>
+                              <div className="fAAWasteContent">
+                                <FontAwesomeIcon
+                                  icon={faTrashCan}
+                                  style={{ fontSize: "2.5em", width: "2em" }}
+                                />
+                                <p>In House: 10%</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div className="fAABadOutcome">
                           <h1>Bad Outcome: Malnutrition</h1>
