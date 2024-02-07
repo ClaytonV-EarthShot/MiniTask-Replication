@@ -640,16 +640,25 @@ a, a:hover, a:focus, a:active {
   margin-bottom: 1.5em;
 }
 
-.foodAndAgrWrapper > h1:nth-child(3) {
-  text-align: center;
-  margin-left: 20em;
+.dataHighlightBox {
+  background-color: #737373;
+  width: 95%;
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  box-shadow: inset 3px 3px 15px 0 rgba(0,0,0,0.5),
+  inset -3px -3px 15px 0 rgba(0,0,0,0.5);
+}
+
+.foodAndAgrWrapper > h2:nth-child(4) {
+  width: 100%;
+  text-align: end;
+  margin-right: 14em;
 }
 
 .fAANutrition {
   display: flex;
   width: 100%;
-  margin-bottom: 3em;
-  margin-left: 3em;
 }
 
 .fAANutrition > div {
@@ -714,15 +723,18 @@ a, a:hover, a:focus, a:active {
   padding-right: 1em;
 }
 
-.fAAAgriculutureFacts {
+.fAAAgriculutureFactsWrapper {
   display: flex;
   justify-content: center;
-  width: 60%;
-  margin-bottom: 3em;
+}
+
+.fAAAgriculutureFacts {
+  width: 75%;
+  margin-bottom: 1em;
 }
 
 table, tr, td {
-  background-color: #737373;
+  background-color: #595959;
   border: 2px solid #333333;
   border-collapse: collapse;
 }
@@ -745,19 +757,34 @@ td {
   width: 95%;
   flex-direction: column;
   margin-bottom: 1em;
+  align-items: center;
+}
+
+.fAAWasteBreakdown > h1 {
+  width: 75%;
+  text-align: center;
 }
 
 .fAAWasteBreakdownInfo {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .fAAWasteCapita {
   width: 50%;
 }
 
+.fAAWasteCapita > h2 {
+  margin-left: 20%;
+}
+
 .fAAWasteDistribution {
   width: 50%;
+}
+
+.fAAWasteDistribution > h2 {
+  margin-left: 20%;
 }
 
 .fAAWasteContent {
@@ -776,6 +803,8 @@ td {
   border-radius: 1em;
   padding: 1em;
   margin-bottom: 1em;
+  box-shadow: inset 3px 3px 15px 0 rgba(75, 11, 11, 0.6),
+  inset -3px -3px 15px 0 rgba(75, 11, 11, 0.6);
 }
 
 .fAABadOutcomeInfoWrapper {
