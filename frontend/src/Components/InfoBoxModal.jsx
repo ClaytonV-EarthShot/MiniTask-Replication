@@ -14,12 +14,12 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
   const [tabThree, setTabThree] = useState("");
   const [tabFour, setTabFour] = useState("");
   const [tabFive, setTabFive] = useState("");
+  const [tabSix, setTabSix] = useState("");
+  const [tabSeven, setTabSeven] = useState("");
   const [bucketOne, setBucketOne] = useState();
 
   useEffect(() => {
     const fetchBucketOne = async () => {
-      console.log("This is country.bucketOne");
-      console.log(country.bucketOne);
       const response = await fetch(`/api/bucketone/${country.bucketOne}`);
       const json = await response.json();
 
@@ -42,6 +42,8 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
         setTabThree("");
         setTabFour("");
         setTabFive("");
+        setTabSix("");
+        setTabSeven("");
         break;
       case "two":
         setTabOne("");
@@ -49,6 +51,8 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
         setTabThree("");
         setTabFour("");
         setTabFive("");
+        setTabSix("");
+        setTabSeven("");
         break;
       case "three":
         setTabOne("");
@@ -56,6 +60,8 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
         setTabThree("clicked");
         setTabFour("");
         setTabFive("");
+        setTabSix("");
+        setTabSeven("");
         break;
       case "four":
         setTabOne("");
@@ -63,6 +69,8 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
         setTabThree("");
         setTabFour("clicked");
         setTabFive("");
+        setTabSix("");
+        setTabSeven("");
         break;
       case "five":
         setTabOne("");
@@ -70,6 +78,35 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
         setTabThree("");
         setTabFour("");
         setTabFive("clicked");
+        setTabSix("");
+        setTabSeven("");
+        break;
+      case "six":
+        setTabOne("");
+        setTabTwo("");
+        setTabThree("");
+        setTabFour("");
+        setTabFive("");
+        setTabSix("clicked");
+        setTabSeven("");
+        break;
+      case "seven":
+        setTabOne("");
+        setTabTwo("");
+        setTabThree("");
+        setTabFour("");
+        setTabFive("");
+        setTabSix("");
+        setTabSeven("clicked");
+        break;
+      default:
+        setTabOne("");
+        setTabTwo("");
+        setTabThree("");
+        setTabFour("");
+        setTabFive("");
+        setTabSix("");
+        setTabSeven("");
         break;
     }
   };
@@ -120,39 +157,51 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
                   className={`modalButton ${tabThree}`}
                   onClick={() => tabClicked("three")}
                 >
-                  Healthcare
+                  Water Access & Quality
                 </button>
                 <button
                   className={`modalButton ${tabFour}`}
                   onClick={() => tabClicked("four")}
                 >
-                  Category
+                  Energy
                 </button>
                 <button
                   className={`modalButton ${tabFive}`}
                   onClick={() => tabClicked("five")}
                 >
-                  Category
+                  Affordable Housing
+                </button>
+                <button
+                  className={`modalButton ${tabSix}`}
+                  onClick={() => tabClicked("six")}
+                >
+                  Environment
+                </button>
+                <button
+                  className={`modalButton ${tabSeven}`}
+                  onClick={() => tabClicked("seven")}
+                >
+                  Economic Prosperity
                 </button>
               </div>
             </div>
             <div className="modalContentWrapper">
               <div className="modalContentContainer">
-                <div className="modalContent">
-                  {tabOne === "clicked" && (
-                    <>
-                      <ModalInfoTab country={country} />
-                    </>
-                  )}
-                  {tabTwo === "clicked" && (
-                    <>
-                      <ModalFAATab country={country} />
-                    </>
-                  )}
-                  {tabThree === "clicked" && <div>You're in tab three.</div>}
-                  {tabFour === "clicked" && <div>You're in tab four.</div>}
-                  {tabFive === "clicked" && <div>You're in tab five.</div>}
-                </div>
+                {tabOne === "clicked" && (
+                  <>
+                    <ModalInfoTab country={country} />
+                  </>
+                )}
+                {tabTwo === "clicked" && (
+                  <>
+                    <ModalFAATab country={country} bucketOne={bucketOne} />
+                  </>
+                )}
+                {tabThree === "clicked" && <div>You're in tab three.</div>}
+                {tabFour === "clicked" && <div>You're in tab four.</div>}
+                {tabFive === "clicked" && <div>You're in tab five.</div>}
+                {tabSix === "clicked" && <div>You're in tab six.</div>}
+                {tabSeven === "clicked" && <div>You're in tab seven.</div>}
               </div>
             </div>
           </div>

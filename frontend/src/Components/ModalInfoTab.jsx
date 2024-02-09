@@ -1,3 +1,5 @@
+import styles from "../Stylesheets/ModalInfoBox.css";
+
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

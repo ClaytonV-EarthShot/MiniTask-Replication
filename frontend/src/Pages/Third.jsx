@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 
-import InfoBox from "../Components/InfoBox";
+// import InfoBox from "../Components/InfoBox";
 import SideNav from "../Components/SideNav";
 import InfoBoxModal from "../Components/InfoBoxModal";
 
 export default function Third() {
-  // const [cities, setCities] = useState([]);
-  // const [filteredCities, setFilteredCities] = useState(cities);
-  // const [modalCity, setModalCity] = useState({});
-
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const [modalCountry, setModalCountry] = useState({});
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [isVisible, setVisible] = useState(false);
+
+  const LazyInfoBox = lazy(() => import("../Components/InfoBox"));
 
   let filters = [
     {
@@ -128,13 +126,15 @@ export default function Third() {
                   onClick={() => openModal(country)}
                   key={country._id}
                 >
-                  <InfoBox
-                    countryNumber={index + 1}
-                    countryName={country.country}
-                    countryPopulation={country.population}
-                    countryLDC={country.LDC}
-                    countryImageLink={country.imageLink}
-                  />
+                  <Suspense fallback={<></>}>
+                    <LazyInfoBox
+                      countryNumber={index + 1}
+                      countryName={country.country}
+                      countryPopulation={country.population}
+                      countryLDC={country.LDC}
+                      countryImageLink={country.imageLink}
+                    />
+                  </Suspense>
                 </button>
               ))}
           </div>

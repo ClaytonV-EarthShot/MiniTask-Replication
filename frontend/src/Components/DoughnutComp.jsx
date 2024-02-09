@@ -72,25 +72,7 @@ export default function DoughnutComp() {
 
   return (
     <>
-      <div style={{ position: "relative" }}>
-        <Doughnut data={data} options={options} />
-      </div>
+      <Doughnut data={data} options={options} />
     </>
   );
 }
-
-/*
-
-<span style={{
-          whiteSpace: 'nowrap',
-          color: 'white', 
-          fontSize: '5em', 
-          position: 'absolute', 
-          left: '50%', 
-          top: '50%', 
-          transform: 'translate(-50%, -50%)'
-          }}>
-          <FontAwesomeIcon icon={faCloudRain} />
-        </span>
-
-*/
