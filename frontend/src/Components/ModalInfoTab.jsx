@@ -66,7 +66,6 @@ export default function ModalInfoTab({ country }) {
         style={{ borderTopLeftRadius: "1em", borderTopRightRadius: "1em" }}
       >
         <div className="infoTabWrapper">
-          <div></div>
           <div className="infoTabContent">
             <h1>Income Classification</h1>
             <div className="incomeClassContainer">

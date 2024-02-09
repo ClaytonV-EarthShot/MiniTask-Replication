@@ -228,3 +228,77 @@
 .urbanContent > p {
   margin: 0;
 }
+
+@media screen and (min-width: 1331px) and (max-width: 1610px) {
+
+}
+
+@media screen and (min-width: 1066px) and (max-width: 1331px) {
+
+  
+}
+
+@media screen and (min-width: 814px) and (max-width: 1066px) {
+  .infoTabWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .infoTabContent {
+    width: 100%;
+  }
+
+  .infoTabMapContainer {
+    width: 60%;
+    padding: 1em;
+    height: 15em;
+  }
+
+  .gniTable {
+    justify-content: center;
+  }
+  
+  .gniContent > p {
+    height: 2.8em;
+  }
+
+  .gniContent > p:nth-child(2) {
+    background-color: #4d4d4d;
+    height: 1.4em;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 814px) {
+  .infoTabWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .infoTabContent {
+    width: 100%;
+  }
+
+  .infoTabMapContainer {
+    width: 60%;
+    padding: 1em;
+    height: 15em;
+  }
+
+  .gniTable {
+    justify-content: center;
+  }
+  
+  .gniContent > p {
+    height: 2.8em;
+  }
+
+  .gniContent > p:nth-child(2) {
+    background-color: #4d4d4d;
+    height: 1.4em;
+  }
+}
+
