@@ -1,17 +1,5 @@
 /* Modal  >>> Food and Agriculture Tab */
 
-.dataHighlightBoxLight {
-  background-color: #585858;
-  width: 94%;
-  padding: 1em;
-}
-
-.dataHighlightBoxDark {
-  background-color: #4d4d4d;
-  width: 94%;
-  padding: 1em;
-}
-
 .nutrition {
   display: flex;
   width: 100%;

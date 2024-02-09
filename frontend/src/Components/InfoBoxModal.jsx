@@ -9,22 +9,18 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
     imageName = `url('${country.imageLink})`;
   }
 
-  const [tabOne, setTabOne] = useState("clicked");
-  const [tabTwo, setTabTwo] = useState("");
-  const [tabThree, setTabThree] = useState("");
-  const [tabFour, setTabFour] = useState("");
-  const [tabFive, setTabFive] = useState("");
-  const [tabSix, setTabSix] = useState("");
-  const [tabSeven, setTabSeven] = useState("");
+  const [activeTab, setActiveTab] = useState("one");
   const [bucketOne, setBucketOne] = useState();
 
   useEffect(() => {
     const fetchBucketOne = async () => {
-      const response = await fetch(`/api/bucketone/${country.bucketOne}`);
-      const json = await response.json();
+      if (country !== undefined) {
+        const response = await fetch(`/api/bucketone/${country.bucketOne}`);
+        const json = await response.json();
 
-      if (response.ok) {
-        setBucketOne(json);
+        if (response.ok) {
+          setBucketOne(json);
+        }
       }
     };
     fetchBucketOne();
@@ -35,80 +31,7 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
   };
 
   const tabClicked = (tab) => {
-    switch (tab) {
-      case "one":
-        setTabOne("clicked");
-        setTabTwo("");
-        setTabThree("");
-        setTabFour("");
-        setTabFive("");
-        setTabSix("");
-        setTabSeven("");
-        break;
-      case "two":
-        setTabOne("");
-        setTabTwo("clicked");
-        setTabThree("");
-        setTabFour("");
-        setTabFive("");
-        setTabSix("");
-        setTabSeven("");
-        break;
-      case "three":
-        setTabOne("");
-        setTabTwo("");
-        setTabThree("clicked");
-        setTabFour("");
-        setTabFive("");
-        setTabSix("");
-        setTabSeven("");
-        break;
-      case "four":
-        setTabOne("");
-        setTabTwo("");
-        setTabThree("");
-        setTabFour("clicked");
-        setTabFive("");
-        setTabSix("");
-        setTabSeven("");
-        break;
-      case "five":
-        setTabOne("");
-        setTabTwo("");
-        setTabThree("");
-        setTabFour("");
-        setTabFive("clicked");
-        setTabSix("");
-        setTabSeven("");
-        break;
-      case "six":
-        setTabOne("");
-        setTabTwo("");
-        setTabThree("");
-        setTabFour("");
-        setTabFive("");
-        setTabSix("clicked");
-        setTabSeven("");
-        break;
-      case "seven":
-        setTabOne("");
-        setTabTwo("");
-        setTabThree("");
-        setTabFour("");
-        setTabFive("");
-        setTabSix("");
-        setTabSeven("clicked");
-        break;
-      default:
-        setTabOne("");
-        setTabTwo("");
-        setTabThree("");
-        setTabFour("");
-        setTabFive("");
-        setTabSix("");
-        setTabSeven("");
-        break;
-    }
+    setActiveTab(tab);
   };
 
   return (
@@ -142,43 +65,47 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
               </div>
               <div className="modalButtonContainer">
                 <button
-                  className={`modalButton ${tabOne}`}
+                  className={`modalButton ${activeTab === "one" && "clicked"}`}
                   onClick={() => tabClicked("one")}
                 >
                   Information
                 </button>
                 <button
-                  className={`modalButton ${tabTwo}`}
+                  className={`modalButton ${activeTab === "two" && "clicked"}`}
                   onClick={() => tabClicked("two")}
                 >
                   Food & Agriculture
                 </button>
                 <button
-                  className={`modalButton ${tabThree}`}
+                  className={`modalButton ${
+                    activeTab === "three" && "clicked"
+                  }`}
                   onClick={() => tabClicked("three")}
                 >
                   Water Access & Quality
                 </button>
                 <button
-                  className={`modalButton ${tabFour}`}
+                  className={`modalButton ${activeTab === "four" && "clicked"}`}
                   onClick={() => tabClicked("four")}
                 >
                   Energy
                 </button>
                 <button
-                  className={`modalButton ${tabFive}`}
+                  className={`modalButton ${activeTab === "five" && "clicked"}`}
                   onClick={() => tabClicked("five")}
                 >
                   Affordable Housing
                 </button>
                 <button
-                  className={`modalButton ${tabSix}`}
+                  className={`modalButton ${activeTab === "six" && "clicked"}`}
                   onClick={() => tabClicked("six")}
                 >
                   Environment
                 </button>
                 <button
-                  className={`modalButton ${tabSeven}`}
+                  className={`modalButton ${
+                    activeTab === "seven" && "clicked"
+                  }`}
                   onClick={() => tabClicked("seven")}
                 >
                   Economic Prosperity
@@ -187,21 +114,21 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
             </div>
             <div className="modalContentWrapper">
               <div className="modalContentContainer">
-                {tabOne === "clicked" && (
+                {activeTab === "one" && (
                   <>
                     <ModalInfoTab country={country} />
                   </>
                 )}
-                {tabTwo === "clicked" && (
+                {activeTab === "two" && (
                   <>
                     <ModalFAATab country={country} bucketOne={bucketOne} />
                   </>
                 )}
-                {tabThree === "clicked" && <div>You're in tab three.</div>}
-                {tabFour === "clicked" && <div>You're in tab four.</div>}
-                {tabFive === "clicked" && <div>You're in tab five.</div>}
-                {tabSix === "clicked" && <div>You're in tab six.</div>}
-                {tabSeven === "clicked" && <div>You're in tab seven.</div>}
+                {activeTab === "three" && <div>You're in tab three.</div>}
+                {activeTab === "four" && <div>You're in tab four.</div>}
+                {activeTab === "five" && <div>You're in tab five.</div>}
+                {activeTab === "six" && <div>You're in tab six.</div>}
+                {activeTab === "seven" && <div>You're in tab seven.</div>}
               </div>
             </div>
           </div>

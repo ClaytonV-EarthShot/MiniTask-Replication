@@ -82,7 +82,9 @@ export default function ModalFAATab({ country, bucketOne }) {
               <p>Most Rainfed Crop: </p>
             </div>
           </div>
-          <span>{/* <BarComp /> */}</span>
+          <span>
+            <BarComp />
+          </span>
         </div>
         <div className="agriculutureFactsWrapper">
           <div className="agriculutureFacts">

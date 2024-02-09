@@ -388,6 +388,18 @@ a, a:hover, a:focus, a:active {
   align-items: center;
 }
 
+.dataHighlightBoxLight {
+  background-color: #585858;
+  width: 94%;
+  padding: 1em;
+}
+
+.dataHighlightBoxDark {
+  background-color: #4d4d4d;
+  width: 94%;
+  padding: 1em;
+}
+
 /* Media Screens */
 
 @media screen and (min-width: 1331px) and (max-width: 1610px) {
