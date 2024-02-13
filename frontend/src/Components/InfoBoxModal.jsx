@@ -58,25 +58,32 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
                   </p>
                 </div>
                 <div className="modalTitleExitContainer">
-                  <button className="exitButton" onClick={closeModal}>
+                  <button
+                    type="button"
+                    className="exitButton"
+                    onClick={closeModal}
+                  >
                     X
                   </button>
                 </div>
               </div>
               <div className="modalButtonContainer">
                 <button
+                  type="button"
                   className={`modalButton ${activeTab === "one" && "clicked"}`}
                   onClick={() => tabClicked("one")}
                 >
                   Information
                 </button>
                 <button
+                  type="button"
                   className={`modalButton ${activeTab === "two" && "clicked"}`}
                   onClick={() => tabClicked("two")}
                 >
                   Food & Agriculture
                 </button>
                 <button
+                  type="button"
                   className={`modalButton ${
                     activeTab === "three" && "clicked"
                   }`}
@@ -85,24 +92,28 @@ export default function InfoBoxModal({ country, visibility, closeModal }) {
                   Water Access & Quality
                 </button>
                 <button
+                  type="button"
                   className={`modalButton ${activeTab === "four" && "clicked"}`}
                   onClick={() => tabClicked("four")}
                 >
                   Energy
                 </button>
                 <button
+                  type="button"
                   className={`modalButton ${activeTab === "five" && "clicked"}`}
                   onClick={() => tabClicked("five")}
                 >
                   Affordable Housing
                 </button>
                 <button
+                  type="button"
                   className={`modalButton ${activeTab === "six" && "clicked"}`}
                   onClick={() => tabClicked("six")}
                 >
                   Environment
                 </button>
                 <button
+                  type="button"
                   className={`modalButton ${
                     activeTab === "seven" && "clicked"
                   }`}

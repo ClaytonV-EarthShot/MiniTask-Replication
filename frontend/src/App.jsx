@@ -1,8 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import First from "./Pages/First";
-import Second from "./Pages/Second";
-import Third from "./Pages/Third";
+import LandingPage from "./Pages/LandingPage";
+import ProblemStatementPage from "./Pages/ProblemStatementPage";
 
 function App() {
   return (
@@ -13,10 +12,9 @@ function App() {
       ></script>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Third />} />
-          {/* <Route path='/first' element={<First />}/>
-          <Route path='/second' element={<Second />}/> */}
-          <Route path="/third" element={<Third />} />
+          <Route index element={<LandingPage />} />
+          <Route path="/landing-page" element={<LandingPage />} />
+          <Route path="/problem-statement" element={<ProblemStatementPage />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -4,7 +4,7 @@ import { useEffect, useState, Suspense, lazy } from "react";
 import SideNav from "../Components/SideNav";
 import InfoBoxModal from "../Components/InfoBoxModal";
 
-export default function Third() {
+export default function LandingPage() {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const [modalCountry, setModalCountry] = useState({});
@@ -21,14 +21,6 @@ export default function Third() {
     {
       name: "Small Population",
       tooltipText: "A population that is less than 1,000,000",
-    },
-    {
-      name: "Large Area",
-      tooltipText: "Area bigger than 600km²",
-    },
-    {
-      name: "Small Area",
-      tooltipText: "Area smaller than 600km²",
     },
   ];
 
@@ -105,6 +97,7 @@ export default function Third() {
           <div className="filterButtonContainer">
             {filters.map((category, index) => (
               <button
+                type="button"
                 onClick={() => handleFilterButtonClick(category.name)}
                 className={`
                   filterButton 
@@ -122,6 +115,7 @@ export default function Third() {
             {filteredCountries &&
               filteredCountries.map((country, index) => (
                 <button
+                  type="button"
                   className="infoBoxContainerButton"
                   onClick={() => openModal(country)}
                   key={country._id}

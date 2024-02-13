@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 html, body {
   overflow: auto;
   height: 100%;
@@ -6,8 +8,7 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, 'Ubuntu', 'Montserrat','Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -52,7 +53,7 @@ a, a:hover, a:focus, a:active {
   flex-direction: column;
   height: 98vh;
   box-shadow: 0.5em 0 1em 0 rgba(0,0,0,0.5);
-  z-index: 990;
+  z-index: 500;
   top: 0;
   color: #fefefe;
   position: sticky;
@@ -96,7 +97,7 @@ a, a:hover, a:focus, a:active {
 .sideNav li a {
   display: flex;
   align-items: center;
-  line-height: 0;
+  line-height: 1;
 }
 
 .sideNav li a p {
@@ -209,6 +210,7 @@ a, a:hover, a:focus, a:active {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: dense;
   padding-left: 0;
   gap: 1em 1em;
 }
@@ -452,4 +454,13 @@ a, a:hover, a:focus, a:active {
     white-space: initial;
     margin-block-start: 0.3em;
   }
+
+  .modalTitleCountryRegion {
+    font-size: 1.3em;
+  }
+
+  .modalTitleExitContainer {
+    font-size: 1.2em;
+  }
+  
 }

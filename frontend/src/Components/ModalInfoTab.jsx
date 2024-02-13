@@ -36,7 +36,6 @@ export default function ModalInfoTab({ country }) {
   useEffect(() => {
     const getIncomeClass = () => {
       const subString = country.incomeClassification.substring(0, 3);
-      console.log(`This is substring: ${subString}`);
       switch (subString) {
         case "[UM":
           setIncomeClass("upperMiddle");
