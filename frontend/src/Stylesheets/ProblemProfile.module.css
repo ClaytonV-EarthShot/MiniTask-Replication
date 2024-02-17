@@ -1,0 +1,47 @@
+.summary {
+  color: white;
+}
+
+.content {
+  padding-left: 2em;
+}
+
+.contentTable {
+  width: 95%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.contentTableHeader {
+  padding: 0.1em;
+  border: 1px solid #0d0d0d;
+  background-color: #4d4d4d;
+}
+
+.contentTableContent {
+  padding: 0.1em;
+  border: 1px solid #0d0d0d;
+  background-color: #999999;
+  color: black;
+}
+
+.contentFooter {
+  display: flex;
+}
+
+.footerColumn {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content > a {
+  color: #d9d9d9;
+  margin-left: 2em;
+}

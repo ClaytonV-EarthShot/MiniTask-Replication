@@ -14,7 +14,10 @@ function App() {
         <Routes>
           <Route index element={<LandingPage />} />
           <Route path="/landing-page" element={<LandingPage />} />
-          <Route path="/problem-statement" element={<ProblemStatementPage />} />
+          <Route
+            path="/problem-statement/:id"
+            element={<ProblemStatementPage />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

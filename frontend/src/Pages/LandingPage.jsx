@@ -93,7 +93,7 @@ export default function LandingPage() {
 
         <SideNav />
 
-        <div style={{ display: "flex", flexDirection: "column", width: "93%" }}>
+        <div className="wrapperThirdPageContent">
           <div className="filterButtonContainer">
             {filters.map((category, index) => (
               <button

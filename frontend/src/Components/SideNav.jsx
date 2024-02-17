@@ -58,7 +58,7 @@ export default function SideNav() {
               </button>
             </li>
             <li>
-              <a href="#">
+              <a href="/problem-statement">
                 <FontAwesomeIcon icon={faCircleExclamation} className="icon" />
                 <p>Problem Statement</p>
               </a>
