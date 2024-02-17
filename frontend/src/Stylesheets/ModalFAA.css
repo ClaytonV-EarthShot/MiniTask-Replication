@@ -82,10 +82,11 @@
 .agriculutureFactsWrapper {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .agriculutureFacts {
-  width: 75%;
+  width: 70%;
   margin-bottom: 1em;
 }
 
@@ -142,7 +143,7 @@ td {
 
 .badOutcome {
   background-color: rgb(241, 101, 101);
-  width: 95%;
+  width: 90%;
   border-radius: 1em;
   padding: 1em;
   margin-top: 1em;

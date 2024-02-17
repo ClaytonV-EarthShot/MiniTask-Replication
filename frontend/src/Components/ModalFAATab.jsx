@@ -2,6 +2,7 @@ import styles from "../Stylesheets/ModalFAA.css";
 
 import DoughnutComp from "./DoughnutComp";
 import BarComp from "./BarComp";
+import ProblemStatementButton from "./ProblemStatementButton";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -50,6 +51,7 @@ export default function ModalFAATab({ country, bucketOne }) {
             </div>
           </div>
         </div>
+        <ProblemStatementButton shade="light" />
       </div>
 
       <div className="dataHighlightBoxDark">
@@ -118,6 +120,7 @@ export default function ModalFAATab({ country, bucketOne }) {
             </table>
           </div>
         </div>
+        <ProblemStatementButton shade="dark" />
       </div>
 
       <div className="dataHighlightBoxLight">
@@ -217,6 +220,7 @@ export default function ModalFAATab({ country, bucketOne }) {
             </tr>
           </tbody>
         </table>
+        <ProblemStatementButton shade="light" />
       </div>
 
       <div className="dataHighlightBoxDark">
@@ -281,6 +285,7 @@ export default function ModalFAATab({ country, bucketOne }) {
             </div>
           </div>
         </div>
+        <ProblemStatementButton shade="dark" />
       </div>
 
       <div
@@ -337,6 +342,7 @@ export default function ModalFAATab({ country, bucketOne }) {
             </div>
           </div>
         </div>
+        <ProblemStatementButton shade="light" />
       </div>
     </>
   );

@@ -10,3 +10,30 @@
   width: 93%;
   padding: 2em;
 }
+
+/* Button For Navigation To Problem Statement */
+
+.buttonContainer {
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin-right: 2em;
+  border: 2px solid #262626;
+  font-size: 1.1em;
+}
+
+.light {
+  background-color: #4d4d4d;
+}
+
+.dark {
+  background-color: #585858;
+}
