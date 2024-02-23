@@ -53,7 +53,7 @@ export default function ProblemStatementPage() {
   return (
     <>
       <div className={styles.problemStatementContainer}>
-        <SideNav style={{ width: "3em" }} />
+        <SideNav />
         <div className={styles.contentWrapper}>
           <ProblemProfile
             summary={testSample.summary}

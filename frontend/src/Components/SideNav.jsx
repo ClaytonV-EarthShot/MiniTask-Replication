@@ -7,6 +7,7 @@ import {
   faInfo,
   faLink,
   faCircleExclamation,
+  faSkull,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function SideNav() {
@@ -33,7 +34,7 @@ export default function SideNav() {
                 <FontAwesomeIcon icon={faCircleExclamation} className="icon" />
               </li>
               <li>
-                <FontAwesomeIcon icon={faLink} className="icon" />
+                <FontAwesomeIcon icon={faSkull} className="icon" />
               </li>
               <li>
                 <FontAwesomeIcon icon={faInfo} className="icon" />
@@ -64,9 +65,9 @@ export default function SideNav() {
               </a>
             </li>
             <li>
-              <a href="#">
-                <FontAwesomeIcon icon={faLink} className="icon" />
-                <p>Other Link</p>
+              <a href="/country-battle">
+                <FontAwesomeIcon icon={faSkull} className="icon" />
+                <p>Country Battle</p>
               </a>
             </li>
             <li>

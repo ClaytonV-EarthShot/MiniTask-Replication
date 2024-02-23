@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
 import ProblemStatementPage from "./Pages/ProblemStatementPage";
+import CountryBattlePage from "./Pages/CountryBattlePage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             path="/problem-statement/:id"
             element={<ProblemStatementPage />}
           />
+          <Route path="/country-battle" element={<CountryBattlePage />} />
         </Routes>
       </BrowserRouter>
     </div>
