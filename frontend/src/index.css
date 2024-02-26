@@ -414,6 +414,14 @@ a, a:hover, a:focus, a:active {
   align-items: center;
 }
 
+.dataHighlightBoxLight > h1 {
+  font-size: 2.3em;
+}
+
+.dataHighlightBoxDark > h1 {
+  font-size: 2.3em;
+}
+
 /* Media Screens */
 
 @media screen and (min-width: 1331px) and (max-width: 1610px) {

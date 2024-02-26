@@ -25,6 +25,43 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ModalFAATab({ country, bucketOne }) {
+  const filterNum = (string) => {
+    if (string) {
+      const numericalChar = new Set([
+        ".",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+      ]);
+      string = string
+        .split("")
+        .filter((char) => numericalChar.has(char))
+        .join("");
+      return string;
+    }
+  };
+
+  const numberConverter = (arrayOfObject) => {
+    let returnArray = [];
+
+    for (let i = 0; i < arrayOfObject.length; i++) {
+      let newItem = filterNum(arrayOfObject[i]);
+
+      newItem = Number(newItem);
+
+      returnArray.push(newItem);
+    }
+
+    return returnArray;
+  };
+
   return (
     <>
       <div
@@ -85,7 +122,43 @@ export default function ModalFAATab({ country, bucketOne }) {
             </div>
           </div>
           <span>
-            <BarComp />
+            <BarComp
+              labels={[
+                "Maize",
+                "Rice",
+                "Wheat",
+                "Barley",
+                "Soybean",
+                "Common Bean",
+                "Pea",
+                "Potato",
+                "Sugarcane",
+              ]}
+              labelOne="Rainfed"
+              labelTwo="Irrigated"
+              dataOne={numberConverter([
+                bucketOne.rainfedMaize,
+                bucketOne.rainfedRice,
+                bucketOne.rainfedWheat,
+                bucketOne.rainfedBarley,
+                bucketOne.rainfedSoybean,
+                bucketOne.rainfedCommonBean,
+                bucketOne.rainfedPea,
+                bucketOne.rainfedPotato,
+                bucketOne.rainfedSugarcane,
+              ])}
+              dataTwo={numberConverter([
+                bucketOne.irrigatedMaize,
+                bucketOne.irrigatedRice,
+                bucketOne.irrigatedWheat,
+                bucketOne.irrigatedBarley,
+                bucketOne.irrigatedSoybean,
+                bucketOne.irrigatedCommonBean,
+                bucketOne.irrigatedPea,
+                bucketOne.irrigatedPotato,
+                bucketOne.irrigatedSugarcane,
+              ])}
+            />
           </span>
         </div>
         <div className="agriculutureFactsWrapper">

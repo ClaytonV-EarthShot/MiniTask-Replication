@@ -1,0 +1,68 @@
+.problemStatementContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.contentWrapper {
+  display: "flex";
+  flex-direction: "column"; 
+  width: 93%;
+  padding: 2em;
+}
+
+.listTitles {
+  display: flex;
+  width: 100%;
+  color:#fefefe;
+  font-size: 1.1em;
+  background-color: #333333;
+}
+
+.listTitles > p {
+  padding: 0.5em;
+  border: 2px solid #4d4d4d;
+  margin-top: 0;
+  margin-bottom: 0; 
+  display: flex;
+  justify-content: center;
+}
+
+.listTitles > p:nth-child(1) {
+  width: 20%;
+}
+
+.listTitles > p:nth-child(2) {
+  width: 60%;
+}
+
+.listTitles > p:nth-child(3) {
+  width: 20%;
+}
+
+.listItem {
+  display: flex;
+  width: 100%;
+  color:#fefefe;
+  font-size: 1.1em;
+  background-color: #404040;
+}
+
+.listItem > p {
+  padding: 0.5em;
+  border: 2px solid #4d4d4d;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.listItem > p:nth-child(1) {
+  width: 20%;
+}
+
+.listItem > p:nth-child(2) {
+  width: 60%;
+}
+
+.listItem > p:nth-child(3) {
+  width: 20%;
+}

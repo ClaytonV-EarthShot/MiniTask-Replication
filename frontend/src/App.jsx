@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
 import ProblemStatementPage from "./Pages/ProblemStatementPage";
 import CountryBattlePage from "./Pages/CountryBattlePage";
+import ProblemStatementList from "./Pages/ProblemStatementList";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route index element={<LandingPage />} />
           <Route path="/landing-page" element={<LandingPage />} />
+          <Route path="/problem-statement" element={<ProblemStatementList />} />
           <Route
             path="/problem-statement/:id"
             element={<ProblemStatementPage />}
