@@ -9,6 +9,7 @@ import {
   faAngleDoubleDown,
   faMinus,
 } from "@fortawesome/free-solid-svg-icons";
+import BarComp from "../Components/BarComp";
 
 export default function CountryBattlePage() {
   const [countries, setCountries] = useState([]);
@@ -416,6 +417,20 @@ export default function CountryBattlePage() {
     }
   };
 
+  const numberConverter = (arrayOfObject) => {
+    let returnArray = [];
+
+    for (let i = 0; i < arrayOfObject.length; i++) {
+      let newItem = filterNum(arrayOfObject[i]);
+
+      newItem = Number(newItem);
+
+      returnArray.push(newItem);
+    }
+
+    return returnArray;
+  };
+
   return (
     <>
       <div className={styles.countryBattleContainer}>
@@ -758,6 +773,43 @@ export default function CountryBattlePage() {
             </div>
           </div>
 
+          <div className={styles.barGraphContainer}>
+            {bucketOneCountryOne !== "" && bucketOneCountryTwo !== "" && (
+              <BarComp
+                labels={[
+                  "Caloric Supply Per Capita",
+                  "Protein Supply Per Capita",
+                  "Supply From Animal Based Foods",
+                  "Supply From Animal Based Foods",
+                  "Supply From Plant Based Foods",
+                  "Fat Supply Per Capita",
+                  "Dietary Energy Supply Adequacy",
+                  "Minimum Dietary Energy Requirement",
+                ]}
+                labelOne={countryOne.country}
+                labelTwo={countryTwo.country}
+                dataOne={numberConverter([
+                  bucketOneCountryOne.caloricSupplyPerCapita,
+                  bucketOneCountryOne.proteinSupplyPerCapita,
+                  bucketOneCountryOne.supplyFromAnimalBasedFoods,
+                  bucketOneCountryOne.supplyFromPlantBasedFoods,
+                  bucketOneCountryOne.fatSupplyPerCapita,
+                  bucketOneCountryOne.dietaryEnergySupplyAdequacy,
+                  bucketOneCountryOne.minimumDietaryEnergyRequirement,
+                ])}
+                dataTwo={numberConverter([
+                  bucketOneCountryTwo.caloricSupplyPerCapita,
+                  bucketOneCountryTwo.proteinSupplyPerCapita,
+                  bucketOneCountryTwo.supplyFromAnimalBasedFoods,
+                  bucketOneCountryTwo.supplyFromPlantBasedFoods,
+                  bucketOneCountryTwo.fatSupplyPerCapita,
+                  bucketOneCountryTwo.dietaryEnergySupplyAdequacy,
+                  bucketOneCountryTwo.minimumDietaryEnergyRequirement,
+                ])}
+              />
+            )}
+          </div>
+
           <div className={styles.categoryResult}>
             {sectionOneWinner === countryOne.country && (
               <>
@@ -857,19 +909,440 @@ export default function CountryBattlePage() {
             </div>
           </div>
 
+          <div className={styles.contentTitle}>Household</div>
+          <div className={styles.content}>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <p>{bucketOneCountryOne.household}</p>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryOne.household,
+                    bucketOneCountryTwo.household
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryOne.household,
+                      bucketOneCountryTwo.household
+                    ),
+                  }}
+                />
+              </div>
+            </div>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryTwo.household,
+                    bucketOneCountryOne.household
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryTwo.household,
+                      bucketOneCountryOne.household
+                    ),
+                  }}
+                />
+                <p>{bucketOneCountryTwo.household}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.barGraphContainer}>
+            {bucketOneCountryOne !== "" && bucketOneCountryTwo !== "" && (
+              <BarComp
+                labels={["Retail", "Out of Home Consumption", "Household"]}
+                labelOne={countryOne.country}
+                labelTwo={countryTwo.country}
+                dataOne={numberConverter([
+                  bucketOneCountryOne.retail,
+                  bucketOneCountryOne.outOfHomeConsumption,
+                  bucketOneCountryOne.household,
+                ])}
+                dataTwo={numberConverter([
+                  bucketOneCountryTwo.retail,
+                  bucketOneCountryTwo.outOfHomeConsumption,
+                  bucketOneCountryTwo.household,
+                ])}
+              />
+            )}
+          </div>
+
           <div className={styles.categoryResult}>
-            {sectionOneWinner === countryOne.country && (
+            {sectionTwoWinner === countryOne.country && (
               <>
-                <h2>{sectionOneWinner} is the winner!</h2>
+                <h2>{sectionTwoWinner} is the winner!</h2>
               </>
             )}
-            {sectionOneWinner === countryTwo.country && (
+            {sectionTwoWinner === countryTwo.country && (
               <>
-                <h2>{sectionOneWinner} is the winner!</h2>
+                <h2>{sectionTwoWinner} is the winner!</h2>
               </>
             )}
-            {sectionOneWinner !== countryOne.country &&
-              sectionOneWinner !== countryTwo.country && (
+            {sectionTwoWinner !== countryOne.country &&
+              sectionTwoWinner !== countryTwo.country && (
+                <>
+                  <h2>Both countries are tied!</h2>
+                </>
+              )}
+          </div>
+
+          <div className={styles.contentTitle}>
+            Agricultureal Water Withdrawal
+          </div>
+          <div className={styles.content}>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <p>{bucketOneCountryOne.agriculturalWaterWithdrawal}</p>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryOne.agriculturalWaterWithdrawal,
+                    bucketOneCountryTwo.agriculturalWaterWithdrawal
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryOne.agriculturalWaterWithdrawal,
+                      bucketOneCountryTwo.agriculturalWaterWithdrawal
+                    ),
+                  }}
+                />
+              </div>
+            </div>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryTwo.agriculturalWaterWithdrawal,
+                    bucketOneCountryOne.agriculturalWaterWithdrawal
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryTwo.agriculturalWaterWithdrawal,
+                      bucketOneCountryOne.agriculturalWaterWithdrawal
+                    ),
+                  }}
+                />
+                <p>{bucketOneCountryTwo.agriculturalWaterWithdrawal}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.contentTitle}>
+            Fertilizer Used Per Unit of Land
+          </div>
+          <div className={styles.content}>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <p>{bucketOneCountryOne.fertilizerUsePerUnitOfLand}</p>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryOne.fertilizerUsePerUnitOfLand,
+                    bucketOneCountryTwo.fertilizerUsePerUnitOfLand
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryOne.fertilizerUsePerUnitOfLand,
+                      bucketOneCountryTwo.fertilizerUsePerUnitOfLand
+                    ),
+                  }}
+                />
+              </div>
+            </div>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryTwo.fertilizerUsePerUnitOfLand,
+                    bucketOneCountryOne.fertilizerUsePerUnitOfLand
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryTwo.fertilizerUsePerUnitOfLand,
+                      bucketOneCountryOne.fertilizerUsePerUnitOfLand
+                    ),
+                  }}
+                />
+                <p>{bucketOneCountryTwo.fertilizerUsePerUnitOfLand}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.contentTitle}>Crop Land Percentage</div>
+          <div className={styles.content}>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <p>{bucketOneCountryOne.cropLandPercent}</p>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryOne.cropLandPercent,
+                    bucketOneCountryTwo.cropLandPercent
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryOne.cropLandPercent,
+                      bucketOneCountryTwo.cropLandPercent
+                    ),
+                  }}
+                />
+              </div>
+            </div>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryTwo.cropLandPercent,
+                    bucketOneCountryOne.cropLandPercent
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryTwo.cropLandPercent,
+                      bucketOneCountryOne.cropLandPercent
+                    ),
+                  }}
+                />
+                <p>{bucketOneCountryTwo.cropLandPercent}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.contentTitle}>
+            Agriculture Factor Productivity
+          </div>
+          <div className={styles.content}>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <p>{bucketOneCountryOne.agricultureFactorProductivity}</p>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryOne.agricultureFactorProductivity,
+                    bucketOneCountryTwo.agricultureFactorProductivity
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryOne.agricultureFactorProductivity,
+                      bucketOneCountryTwo.agricultureFactorProductivity
+                    ),
+                  }}
+                />
+              </div>
+            </div>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryTwo.agricultureFactorProductivity,
+                    bucketOneCountryOne.agricultureFactorProductivity
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryTwo.agricultureFactorProductivity,
+                      bucketOneCountryOne.agricultureFactorProductivity
+                    ),
+                  }}
+                />
+                <p>{bucketOneCountryTwo.agricultureFactorProductivity}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.contentTitle}>Agricultural R&D</div>
+          <div className={styles.content}>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <p>{bucketOneCountryOne.agriculturalRAndD}</p>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryOne.agriculturalRAndD,
+                    bucketOneCountryTwo.agriculturalRAndD
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryOne.agriculturalRAndD,
+                      bucketOneCountryTwo.agriculturalRAndD
+                    ),
+                  }}
+                />
+              </div>
+            </div>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryTwo.agriculturalRAndD,
+                    bucketOneCountryOne.agriculturalRAndD
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryTwo.agriculturalRAndD,
+                      bucketOneCountryOne.agriculturalRAndD
+                    ),
+                  }}
+                />
+                <p>{bucketOneCountryTwo.agriculturalRAndD}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.barGraphContainer}>
+            {bucketOneCountryOne !== "" && bucketOneCountryTwo !== "" && (
+              <BarComp
+                labels={[
+                  "Agricultureal Water Withdrawal",
+                  "Fertilizer Used Per Unit of Land",
+                  "Crop Land Percentage",
+                  "Agriculture Factor Productivity",
+                  "Agricultural R&D",
+                ]}
+                labelOne={countryOne.country}
+                labelTwo={countryTwo.country}
+                dataOne={numberConverter([
+                  bucketOneCountryOne.agriculturalWaterWithdrawal,
+                  bucketOneCountryOne.fertilizerUsePerUnitOfLand,
+                  bucketOneCountryOne.cropLandPercent,
+                  bucketOneCountryOne.agricultureFactorProductivity,
+                  bucketOneCountryOne.agriculturalRAndD,
+                ])}
+                dataTwo={numberConverter([
+                  bucketOneCountryTwo.agriculturalWaterWithdrawal,
+                  bucketOneCountryTwo.fertilizerUsePerUnitOfLand,
+                  bucketOneCountryTwo.cropLandPercent,
+                  bucketOneCountryTwo.agricultureFactorProductivity,
+                  bucketOneCountryTwo.agriculturalRAndD,
+                ])}
+              />
+            )}
+          </div>
+
+          <div className={styles.categoryResult}>
+            {sectionThreeWinner === countryOne.country && (
+              <>
+                <h2>{sectionTwoWinner} is the winner!</h2>
+              </>
+            )}
+            {sectionThreeWinner === countryTwo.country && (
+              <>
+                <h2>{sectionTwoWinner} is the winner!</h2>
+              </>
+            )}
+            {sectionThreeWinner !== countryOne.country &&
+              sectionThreeWinner !== countryTwo.country && (
+                <>
+                  <h2>Both countries are tied!</h2>
+                </>
+              )}
+          </div>
+
+          <div className={styles.contentTitle}>Rainfed Maize</div>
+          <div className={styles.content}>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <p>{bucketOneCountryOne.rainfedMaize}</p>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryOne.rainfedMaize,
+                    bucketOneCountryTwo.rainfedMaize
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryOne.rainfedMaize,
+                      bucketOneCountryTwo.rainfedMaize
+                    ),
+                  }}
+                />
+              </div>
+            </div>
+            <div className={`${styles.countryData}`}>
+              <div className={styles.items}>
+                <FontAwesomeIcon
+                  icon={returnIcon(
+                    bucketOneCountryTwo.rainfedMaize,
+                    bucketOneCountryOne.rainfedMaize
+                  )}
+                  style={{
+                    fontSize: "2em",
+                    color: returnColor(
+                      bucketOneCountryTwo.rainfedMaize,
+                      bucketOneCountryOne.rainfedMaize
+                    ),
+                  }}
+                />
+                <p>{bucketOneCountryTwo.rainfedMaize}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.barGraphContainer}>
+            {bucketOneCountryOne !== "" && bucketOneCountryTwo !== "" && (
+              <BarComp
+                labels={[
+                  "Rainfed Maize",
+                  "Rainfed Rice",
+                  "Rainfed Wheat",
+                  "Rainfed Sorghum",
+                  "Rainfed Millet",
+                  "Rainfed Barley",
+                  "Irrigated Maize",
+                  "Irrigated Rice",
+                  "Irrigated Wheat",
+                  "Irrigated Barley",
+                  "Rainfed Soybean",
+                  "Rainfed Common Bean",
+                  "Rainfed Faba Bean",
+                  "Rainfed Pea",
+                  "Rainfed Chickpea",
+                  "Rainfed Cowpea",
+                  "Rainfed Pigeonpea",
+                  "Rainfed Groundnut",
+                  "Rainfed Cowpea",
+                  "Irrigated Soybean",
+                  "Irrigated Common Bean",
+                  "Irrigated Pea",
+                ]}
+                labelOne={countryOne.country}
+                labelTwo={countryTwo.country}
+                dataOne={numberConverter([
+                  bucketOneCountryOne.agriculturalWaterWithdrawal,
+                  bucketOneCountryOne.fertilizerUsePerUnitOfLand,
+                  bucketOneCountryOne.cropLandPercent,
+                  bucketOneCountryOne.agricultureFactorProductivity,
+                  bucketOneCountryOne.agriculturalRAndD,
+                ])}
+                dataTwo={numberConverter([
+                  bucketOneCountryTwo.agriculturalWaterWithdrawal,
+                  bucketOneCountryTwo.fertilizerUsePerUnitOfLand,
+                  bucketOneCountryTwo.cropLandPercent,
+                  bucketOneCountryTwo.agricultureFactorProductivity,
+                  bucketOneCountryTwo.agriculturalRAndD,
+                ])}
+              />
+            )}
+          </div>
+
+          <div className={styles.categoryResult}>
+            {sectionFourWinner === countryOne.country && (
+              <>
+                <h2>{sectionTwoWinner} is the winner!</h2>
+              </>
+            )}
+            {sectionFourWinner === countryTwo.country && (
+              <>
+                <h2>{sectionTwoWinner} is the winner!</h2>
+              </>
+            )}
+            {sectionFourWinner !== countryOne.country &&
+              sectionFourWinner !== countryTwo.country && (
                 <>
                   <h2>Both countries are tied!</h2>
                 </>

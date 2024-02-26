@@ -1,56 +1,61 @@
 import { Bar } from "react-chartjs-2";
-import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
+import {
+  Chart as ChartJS,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-export default function BarComp() {
+export default function BarComp(labels, labelOne, labelTwo, dataOne, dataTwo) {
+  console.log(labels);
+  // console.log(dataOne);
+  // console.log(dataTwo);
 
   const data = {
-    labels: [
-    'Maize', 'Rice', 'Wheat', 'Sorghum', 'Millet', 'Barley', 'Soybean', 
-    'Common Bean', 'Faba Bean', 'Pea', 'Chickpea', 'Cowpea', 'Pigeonpea',
-    'Groudnut'
-    ],
+    labels: labels.labels,
     datasets: [
       {
-        label: 'Rainfed',
-        data: [10, 15, 33, 1, 22, 17, 14, 12, 12, 6, 3 ,30, 23, 18, 28],
-        backgroundColor: 'rgb(101, 206, 241)'
+        label: labels.labelOne,
+        data: labels.dataOne,
+        backgroundColor: "rgb(101, 206, 241)",
       },
       {
-        label: 'Irrigated',
-        data: [1, 25, 13, 21, 12, 7, 4, 22, 30, 16, 23, 3, 3, 28, 8],
-        backgroundColor: 'rgb(241, 241, 101)'
-      }
-    ]
-  }
+        label: labels.labelTwo,
+        data: labels.dataTwo,
+        backgroundColor: "rgb(241, 241, 101)",
+      },
+    ],
+  };
 
   const options = {
-    plugins: { 
+    plugins: {
       legend: {
         labels: {
-          color: "white"
-        }
-      }
+          color: "white",
+        },
+      },
     },
     scales: {
       x: {
         ticks: {
-          color: 'white'
-        }
+          color: "white",
+        },
       },
       y: {
         ticks: {
-          color: 'white'
-        }
-      }
-    }
-  }
+          color: "white",
+        },
+      },
+    },
+  };
 
   return (
     <>
       <Bar data={data} options={options}></Bar>
     </>
   );
-
 }
